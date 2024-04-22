@@ -1,16 +1,16 @@
-//
-//  SceneDelegate.swift
-//  CinemaStar
-//
-//  Created by Tixon Markin on 22.04.2024.
-//
+// SceneDelegate.swift
+// Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(
+        _ scene: UIScene,
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
         createWindow(with: scene)
     }
 
@@ -20,7 +20,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
     }
-    
-
 }
-

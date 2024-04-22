@@ -1,15 +1,7 @@
-//
-//  ViewController.swift
-//  CinemaStar
-//
-//  Created by Tixon Markin on 22.04.2024.
-//
+// ViewController.swift
+// Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
-
+/// Экран со списком фильмов
+class ViewController: UIViewController {}
