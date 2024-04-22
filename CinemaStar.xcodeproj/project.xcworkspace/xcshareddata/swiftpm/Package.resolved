@@ -1,0 +1,15 @@
+{
+  "originHash" : "bec38504c08c0bb71b53d7bf097cbd327789486af5d70c4b7ad7adcf2fedb811",
+  "pins" : [
+    {
+      "identity" : "keychainpkj",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tixomark/KeyChainPKJ.git",
+      "state" : {
+        "revision" : "cc5580ae0b9443138d2e5a6730c012aed7b7b850",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
