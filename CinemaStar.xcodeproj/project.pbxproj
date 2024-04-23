@@ -21,6 +21,15 @@
 		9D2BECBC2BD6BF7100337AA0 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BECBB2BD6BF7100337AA0 /* BaseCoordinator.swift */; };
 		9D2BECC02BD6C01600337AA0 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BECBF2BD6C01600337AA0 /* ModuleBuilder.swift */; };
 		9D2BECC22BD6C1A400337AA0 /* MovieListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BECC12BD6C1A400337AA0 /* MovieListCoordinator.swift */; };
+		9D2BECC52BD6DF0900337AA0 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BECC42BD6DF0900337AA0 /* MovieCell.swift */; };
+		9D2BECC72BD6E25400337AA0 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BECC62BD6E25400337AA0 /* NSLayoutConstraint+Extension.swift */; };
+		9D2BECCA2BD6E28200337AA0 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BECC92BD6E28200337AA0 /* Array+Extension.swift */; };
+		9D2BECCC2BD6E2A000337AA0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BECCB2BD6E2A000337AA0 /* UIView+Extension.swift */; };
+		9D2BECCF2BD6EC9700337AA0 /* AdvancedNSAttributedStringPKJ in Frameworks */ = {isa = PBXBuildFile; productRef = 9D2BECCE2BD6EC9700337AA0 /* AdvancedNSAttributedStringPKJ */; };
+		9D2BECD42BD6EE2F00337AA0 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BECD12BD6EE2F00337AA0 /* Inter-Regular.ttf */; };
+		9D2BECD52BD6EE2F00337AA0 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BECD22BD6EE2F00337AA0 /* Inter-Black.ttf */; };
+		9D2BECD62BD6EE2F00337AA0 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BECD32BD6EE2F00337AA0 /* Inter-SemiBold.ttf */; };
+		9D2BECD82BD6EEB100337AA0 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BECD72BD6EEB100337AA0 /* UIFont+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +48,14 @@
 		9D2BECBB2BD6BF7100337AA0 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		9D2BECBF2BD6C01600337AA0 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		9D2BECC12BD6C1A400337AA0 /* MovieListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCoordinator.swift; sourceTree = "<group>"; };
+		9D2BECC42BD6DF0900337AA0 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		9D2BECC62BD6E25400337AA0 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
+		9D2BECC92BD6E28200337AA0 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		9D2BECCB2BD6E2A000337AA0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9D2BECD12BD6EE2F00337AA0 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		9D2BECD22BD6EE2F00337AA0 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		9D2BECD32BD6EE2F00337AA0 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		9D2BECD72BD6EEB100337AA0 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2BECCF2BD6EC9700337AA0 /* AdvancedNSAttributedStringPKJ in Frameworks */,
 				9D2BECAD2BD6B0DE00337AA0 /* KeyChainPKJ in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +99,8 @@
 				9D2BECBB2BD6BF7100337AA0 /* BaseCoordinator.swift */,
 				9D2BECBF2BD6C01600337AA0 /* ModuleBuilder.swift */,
 				9D2BECB42BD6BA3700337AA0 /* MovieListModule */,
+				9D2BECC82BD6E25500337AA0 /* Extensions */,
+				9D2BECD02BD6ECF200337AA0 /* Fonts */,
 				9D2BECA02BD6AA0D00337AA0 /* Assets.xcassets */,
 				9D2BECA22BD6AA0D00337AA0 /* LaunchScreen.storyboard */,
 				9D2BECA52BD6AA0D00337AA0 /* Info.plist */,
@@ -101,9 +121,31 @@
 			isa = PBXGroup;
 			children = (
 				9D2BEC9B2BD6AA0B00337AA0 /* MovieListView.swift */,
+				9D2BECC42BD6DF0900337AA0 /* MovieCell.swift */,
 				9D2BECB52BD6BB6100337AA0 /* MovieListViewModel.swift */,
 			);
 			path = MovieListScreen;
+			sourceTree = "<group>";
+		};
+		9D2BECC82BD6E25500337AA0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BECC62BD6E25400337AA0 /* NSLayoutConstraint+Extension.swift */,
+				9D2BECC92BD6E28200337AA0 /* Array+Extension.swift */,
+				9D2BECCB2BD6E2A000337AA0 /* UIView+Extension.swift */,
+				9D2BECD72BD6EEB100337AA0 /* UIFont+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9D2BECD02BD6ECF200337AA0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9D2BECD22BD6EE2F00337AA0 /* Inter-Black.ttf */,
+				9D2BECD12BD6EE2F00337AA0 /* Inter-Regular.ttf */,
+				9D2BECD32BD6EE2F00337AA0 /* Inter-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +168,7 @@
 			name = CinemaStar;
 			packageProductDependencies = (
 				9D2BECAC2BD6B0DE00337AA0 /* KeyChainPKJ */,
+				9D2BECCE2BD6EC9700337AA0 /* AdvancedNSAttributedStringPKJ */,
 			);
 			productName = CinemaStar;
 			productReference = 9D2BEC942BD6AA0B00337AA0 /* CinemaStar.app */;
@@ -157,6 +200,7 @@
 			mainGroup = 9D2BEC8B2BD6AA0B00337AA0;
 			packageReferences = (
 				9D2BECAB2BD6B0DE00337AA0 /* XCRemoteSwiftPackageReference "KeyChainPKJ" */,
+				9D2BECCD2BD6EC9700337AA0 /* XCRemoteSwiftPackageReference "AdvancedNSAttributedStringPKJ" */,
 			);
 			productRefGroup = 9D2BEC952BD6AA0B00337AA0 /* Products */;
 			projectDirPath = "";
@@ -173,9 +217,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D2BECB32BD6B1DE00337AA0 /* .swiftlint.yml in Resources */,
+				9D2BECD52BD6EE2F00337AA0 /* Inter-Black.ttf in Resources */,
+				9D2BECD42BD6EE2F00337AA0 /* Inter-Regular.ttf in Resources */,
 				9D2BECA12BD6AA0D00337AA0 /* Assets.xcassets in Resources */,
 				9D2BECA42BD6AA0D00337AA0 /* Base in Resources */,
 				9D2BECB22BD6B1DE00337AA0 /* .swiftformat in Resources */,
+				9D2BECD62BD6EE2F00337AA0 /* Inter-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,14 +276,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2BECD82BD6EEB100337AA0 /* UIFont+Extension.swift in Sources */,
 				9D2BEC9C2BD6AA0B00337AA0 /* MovieListView.swift in Sources */,
+				9D2BECCC2BD6E2A000337AA0 /* UIView+Extension.swift in Sources */,
 				9D2BEC982BD6AA0B00337AA0 /* AppDelegate.swift in Sources */,
 				9D2BECBA2BD6BEC500337AA0 /* Coordinator.swift in Sources */,
+				9D2BECCA2BD6E28200337AA0 /* Array+Extension.swift in Sources */,
+				9D2BECC72BD6E25400337AA0 /* NSLayoutConstraint+Extension.swift in Sources */,
 				9D2BECC02BD6C01600337AA0 /* ModuleBuilder.swift in Sources */,
 				9D2BECB82BD6BC4300337AA0 /* AppCoordinator.swift in Sources */,
 				9D2BECBC2BD6BF7100337AA0 /* BaseCoordinator.swift in Sources */,
 				9D2BEC9A2BD6AA0B00337AA0 /* SceneDelegate.swift in Sources */,
 				9D2BECB62BD6BB6100337AA0 /* MovieListViewModel.swift in Sources */,
+				9D2BECC52BD6DF0900337AA0 /* MovieCell.swift in Sources */,
 				9D2BECC22BD6C1A400337AA0 /* MovieListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +512,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		9D2BECCD2BD6EC9700337AA0 /* XCRemoteSwiftPackageReference "AdvancedNSAttributedStringPKJ" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tixomark/AdvancedNSAttributedStringPKJ.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -467,6 +527,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9D2BECAB2BD6B0DE00337AA0 /* XCRemoteSwiftPackageReference "KeyChainPKJ" */;
 			productName = KeyChainPKJ;
+		};
+		9D2BECCE2BD6EC9700337AA0 /* AdvancedNSAttributedStringPKJ */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D2BECCD2BD6EC9700337AA0 /* XCRemoteSwiftPackageReference "AdvancedNSAttributedStringPKJ" */;
+			productName = AdvancedNSAttributedStringPKJ;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

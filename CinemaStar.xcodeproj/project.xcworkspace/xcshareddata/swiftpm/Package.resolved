@@ -1,6 +1,15 @@
 {
-  "originHash" : "bec38504c08c0bb71b53d7bf097cbd327789486af5d70c4b7ad7adcf2fedb811",
+  "originHash" : "d1d065de59a54920256ca609c0b062ebe27af5767c5be30967bce71ebedc2f63",
   "pins" : [
+    {
+      "identity" : "advancednsattributedstringpkj",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tixomark/AdvancedNSAttributedStringPKJ.git",
+      "state" : {
+        "revision" : "cbcc1f668b9d004d59727d5bcdc0ea3aa8a1f1e3",
+        "version" : "1.3.1"
+      }
+    },
     {
       "identity" : "keychainpkj",
       "kind" : "remoteSourceControl",
