@@ -35,7 +35,7 @@ final class AppCoordinator: BaseCoordinator {
 
     private func showMovieListModule() {
         let navigationController = UINavigationController()
-        let movieListCoordinator = MovieListCoordinator(rootController: navigationController, builder: builder)
+        let movieListCoordinator = MediaListCoordinator(rootController: navigationController, builder: builder)
         add(coordinator: movieListCoordinator)
         setAsRoot(navigationController)
         movieListCoordinator.start()

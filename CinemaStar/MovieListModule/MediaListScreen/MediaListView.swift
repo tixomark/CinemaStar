@@ -1,11 +1,11 @@
-// MovieListView.swift
+// MediaListView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import AdvancedNSAttributedStringPKJ
 import UIKit
 
-/// Экран со списком фильмов
-class MovieListView: UIViewController, UICollectionViewDelegate {
+/// Экран со списком медиа объектов
+class MediaListView: UIViewController, UICollectionViewDelegate {
     // MARK: - Constants
 
     private enum Constants {
@@ -43,7 +43,7 @@ class MovieListView: UIViewController, UICollectionViewDelegate {
         return label
     }()
 
-    private let moviesCollectionLayout = {
+    private let mediaCollectionLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 14
         layout.minimumInteritemSpacing = 18
@@ -51,19 +51,19 @@ class MovieListView: UIViewController, UICollectionViewDelegate {
         return layout
     }()
 
-    private lazy var moviesCollectionView = {
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: moviesCollectionLayout)
+    private lazy var mediaCollectionView = {
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: mediaCollectionLayout)
         collection.backgroundColor = .clear
         collection.showsVerticalScrollIndicator = false
         collection.dataSource = self
         collection.delegate = self
-        collection.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.description())
+        collection.register(MediaItemCell.self, forCellWithReuseIdentifier: MediaItemCell.description())
         return collection
     }()
 
-    // MARK: - Private Properties
+    // MARK: - Public Properties
 
-    var viewModel: MovieListViewModelProtocol!
+    var viewModel: MediaListViewModelProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,26 +71,34 @@ class MovieListView: UIViewController, UICollectionViewDelegate {
         configureLayout()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+
     // MARK: - Private Methods
 
     private func configureUI() {
         gradientLayer.frame = view.bounds
+        view.backgroundColor = .white
         view.layer.addSublayer(gradientLayer)
-        view.addSubviews(titleLabel, moviesCollectionView)
-        navigationController?.navigationBar.isHidden = true
+        view.addSubviews(titleLabel, mediaCollectionView)
+
+        navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.tintColor = .white
 
         let avalibleWidth = view.bounds.width
-            - moviesCollectionLayout.minimumInteritemSpacing
-            - moviesCollectionLayout.sectionInset.left
-            - moviesCollectionLayout.sectionInset.right
+            - mediaCollectionLayout.minimumInteritemSpacing
+            - mediaCollectionLayout.sectionInset.left
+            - mediaCollectionLayout.sectionInset.right
         let itemWidth = avalibleWidth / 2
-        moviesCollectionLayout.estimatedItemSize = CGSize(width: itemWidth - 1, height: 300)
+        mediaCollectionLayout.estimatedItemSize = CGSize(width: itemWidth - 1, height: 300)
     }
 
     private func configureLayout() {
-        UIView.doNotTAMIC(for: moviesCollectionView, titleLabel)
+        UIView.doNotTAMIC(for: titleLabel, mediaCollectionView)
         titleLabelConfigureLayout()
-        moviesCollectionViewConfigureLayout()
+        mediaCollectionViewConfigureLayout()
     }
 
     private func titleLabelConfigureLayout() {
@@ -101,19 +109,19 @@ class MovieListView: UIViewController, UICollectionViewDelegate {
         ].activate()
     }
 
-    private func moviesCollectionViewConfigureLayout() {
+    private func mediaCollectionViewConfigureLayout() {
         [
-            moviesCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7),
-            moviesCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            moviesCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            moviesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            mediaCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7),
+            mediaCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mediaCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            mediaCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ].activate()
     }
 }
 
-extension MovieListView: UICollectionViewDataSource {
+extension MediaListView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        11
     }
 
     func collectionView(
@@ -121,36 +129,22 @@ extension MovieListView: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: MovieCell.description(),
+            withReuseIdentifier: MediaItemCell.description(),
             for: indexPath
-        ) as? MovieCell
+        ) as? MediaItemCell
         else {
             return UICollectionViewCell()
         }
 
         let text = indexPath.item % 3 == 0 ? "MOview asf  \n asdf" : "Hello"
-        cell.configure(title: text, rating: 8.9)
+        cell.configure(title: text, rating: nil)
 
         return cell
     }
 }
 
-extension MovieListView: UICollectionViewDelegateFlowLayout {
+extension MediaListView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected item ", indexPath.item)
+        viewModel.didTapItem(atIndex: indexPath.item)
     }
-
-//    func collectionView(
-//        _ collectionView: UICollectionView,
-//        layout collectionViewLayout: UICollectionViewLayout,
-//        sizeForItemAt indexPath: IndexPath
-//    ) -> CGSize {
-//        let avalibleWidth = view.frame.width
-//            - moviesCollectionLayout.minimumInteritemSpacing
-//            - moviesCollectionLayout.sectionInset.left
-//            - moviesCollectionLayout.sectionInset.right
-//        let itemWidth = avalibleWidth / 2
-//
-//        return CGSize(width: itemWidth, height: UIView.layoutFittingCompressedSize.height)
-//    }
 }
