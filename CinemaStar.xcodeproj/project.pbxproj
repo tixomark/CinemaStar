@@ -65,6 +65,7 @@
 		9DB0BB512BDD1FEF00AE2D98 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB502BDD1FEF00AE2D98 /* UIAlertController+Extension.swift */; };
 		9DB0BB532BDD33D600AE2D98 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB522BDD33D600AE2D98 /* KeyChainService.swift */; };
 		9DCA8E752BDD3FD10061057F /* KeyChainPKJ in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCA8E742BDD3FD10061057F /* KeyChainPKJ */; };
+		9DCA8E792BDD75510061057F /* MediaItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA8E782BDD75510061057F /* MediaItemType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		9DB0BB4C2BDCDA2C00AE2D98 /* ImageLoadProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadProxy.swift; sourceTree = "<group>"; };
 		9DB0BB502BDD1FEF00AE2D98 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		9DB0BB522BDD33D600AE2D98 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		9DCA8E782BDD75510061057F /* MediaItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 				9D2BED042BDBD11D00337AA0 /* MediaItem.swift */,
 				9D2BED072BDBD1AB00337AA0 /* Person.swift */,
 				9D2BED1D2BDC604700337AA0 /* SimilarMovie.swift */,
+				9DCA8E782BDD75510061057F /* MediaItemType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				9D2BECFD2BDBD08700337AA0 /* PersonDTO.swift in Sources */,
 				9D2BECFF2BDBD09B00337AA0 /* LanguageDTO.swift in Sources */,
 				9D2BED122BDC15A000337AA0 /* NetworkServiceProtocol.swift in Sources */,
+				9DCA8E792BDD75510061057F /* MediaItemType.swift in Sources */,
 				9D2BECD82BD6EEB100337AA0 /* UIFont+Extension.swift in Sources */,
 				9DB0BB512BDD1FEF00AE2D98 /* UIAlertController+Extension.swift in Sources */,
 				9D2BEC9C2BD6AA0B00337AA0 /* MediaListView.swift in Sources */,

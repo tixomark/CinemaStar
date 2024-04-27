@@ -23,3 +23,13 @@ extension Doc {
         rating = dto.rating
     }
 }
+
+extension Doc: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: Doc, rhs: Doc) -> Bool {
+        lhs.id == rhs.id
+    }
+}

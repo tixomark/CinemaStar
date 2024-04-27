@@ -11,7 +11,7 @@ final class CastMemberCell: UICollectionViewCell {
 
     private let castMemberNameLabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.textColor = .white
         label.textAlignment = .center
         label.font = .inter(size: 8)

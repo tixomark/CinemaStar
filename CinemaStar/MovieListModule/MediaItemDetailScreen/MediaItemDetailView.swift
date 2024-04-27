@@ -45,11 +45,10 @@ final class MediaItemDetailView: UIViewController {
             }
         }
 
-    private lazy var collectionView = {
+    private lazy var mediaCollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: compositionalLayout)
         collection.backgroundColor = .clear
         collection.showsVerticalScrollIndicator = false
-        collection.dataSource = self
         collection.delegate = self
         collection.register(MediaItemMainInfoCell.self, forCellWithReuseIdentifier: MediaItemMainInfoCell.description())
         collection.register(CastMemberCell.self, forCellWithReuseIdentifier: CastMemberCell.description())
@@ -69,6 +68,10 @@ final class MediaItemDetailView: UIViewController {
     // MARK: - Public Properties
 
     var viewModel: MediaItemDetalViewModelProtocol!
+
+    // MARK: - Private Properties
+
+    private lazy var mediaItemDataSource = createDataSource()
 
     // MARK: - Life Cycle
 
@@ -96,29 +99,56 @@ final class MediaItemDetailView: UIViewController {
         gradientLayer.frame = view.bounds
         view.backgroundColor = .white
         view.layer.addSublayer(gradientLayer)
-        view.addSubview(collectionView)
+        view.addSubview(mediaCollectionView)
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: likeButton)
+        mediaCollectionView.dataSource = mediaItemDataSource
     }
 
     private func configureLayout() {
-        UIView.doNotTAMIC(for: collectionView)
+        UIView.doNotTAMIC(for: mediaCollectionView)
         collectionViewConfigureLayout()
     }
 
     private func collectionViewConfigureLayout() {
         [
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            mediaCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            mediaCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mediaCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            mediaCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ].activate()
     }
 
     private func bindValues() {
-        viewModel.state.bind { [weak self] _ in
-            Task.detached { @MainActor in
-                self?.collectionView.reloadData()
+        viewModel.state.bind { [weak self] state in
+            var snapshot = NSDiffableDataSourceSnapshot<MediaItemDataSection, MediaItemType>()
+            switch state {
+            case .loading:
+                snapshot.appendSections([])
+                self?.mediaItemDataSource.apply(snapshot, animatingDifferences: true)
+            case let .data(mediaItem):
+                self?.viewModel.mediaItemSections.forEach { section in
+                    var itemsToApply: [MediaItemType] = []
+                    switch section {
+                    case .mainInfo:
+                        itemsToApply = [.main(mediaItem)]
+                    case .cast:
+                        itemsToApply = mediaItem.persons.map { MediaItemType.person($0) }
+                    case .language:
+                        if let language = mediaItem.language {
+                            itemsToApply = [.language(language)]
+                        }
+                    case .watchAlso:
+                        itemsToApply = mediaItem.similarMovies.map { .similarMovie($0) }
+                    }
+                    snapshot.appendSections([section])
+                    snapshot.appendItems(itemsToApply, toSection: section)
+                }
+            case .noData, .error:
+                break
+            }
+            Task { @MainActor in
+                self?.mediaItemDataSource.apply(snapshot, animatingDifferences: true)
             }
         }
         viewModel.isWatching.bind { [weak self] isWatching in
@@ -137,132 +167,107 @@ final class MediaItemDetailView: UIViewController {
     }
 }
 
-extension MediaItemDetailView: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        viewModel?.mediaItemSections.count ?? 0
-    }
+// MARK: Diffable Datasource methods
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard case let .data(mediaItem) = viewModel?.state.value else { return 0 }
-        let section = viewModel.mediaItemSections[section]
-        switch section {
-        case .mainInfo:
-            return 1
-        case .cast:
-            return mediaItem.persons.count
-        case .language:
-            return 1
-        case .watchAlso:
-            return mediaItem.similarMovies.count
-        }
-    }
+extension MediaItemDetailView {
+    typealias MediaItemDataSource = UICollectionViewDiffableDataSource<MediaItemDataSection, MediaItemType>
 
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
-        guard case let .data(mediaItem) = viewModel?.state.value,
-              let section = viewModel?.mediaItemSections[indexPath.section]
-        else { return UICollectionViewCell() }
+    private func createDataSource() -> MediaItemDataSource {
+        let dataSource = MediaItemDataSource(collectionView: mediaCollectionView) { collectionView, indexPath, item in
+            switch item {
+            case let .main(mediaItem):
+                guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: MediaItemMainInfoCell.description(),
+                    for: indexPath
+                ) as? MediaItemMainInfoCell
+                else { return UICollectionViewCell() }
 
-        switch section {
-        case .mainInfo:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: MediaItemMainInfoCell.description(),
-                for: indexPath
-            ) as? MediaItemMainInfoCell
-            else { return UICollectionViewCell() }
-
-            cell.configure(with: mediaItem)
-            cell.watchButtonTappedHandler = { [weak self] in
-                self?.viewModel.watchButtonTapped()
-            }
-            Task.detached(priority: .userInitiated) {
-                let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
-                guard let data else { return }
-                let image = UIImage(data: data)
-                Task.detached { @MainActor in
-                    if index == collectionView.indexPath(for: cell) {
-                        cell.posterImage = image
+                cell.configure(with: mediaItem)
+                cell.watchButtonTappedHandler = { [weak self] in
+                    self?.viewModel.watchButtonTapped()
+                }
+                Task.detached(priority: .userInitiated) {
+                    let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
+                    guard let data else { return }
+                    let image = UIImage(data: data)
+                    Task.detached { @MainActor in
+                        if index == collectionView.indexPath(for: cell) {
+                            cell.posterImage = image
+                        }
                     }
                 }
-            }
-            return cell
+                return cell
+            case let .person(person):
+                guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: CastMemberCell.description(),
+                    for: indexPath
+                ) as? CastMemberCell
+                else { return UICollectionViewCell() }
 
-        case .cast:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: CastMemberCell.description(),
-                for: indexPath
-            ) as? CastMemberCell
-            else { return UICollectionViewCell() }
-
-            cell.castMemberName = mediaItem.persons[indexPath.item].name
-            Task.detached(priority: .userInitiated) {
-                let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
-                guard let data else { return }
-                let image = UIImage(data: data)
-                Task.detached { @MainActor in
-                    if index == collectionView.indexPath(for: cell) {
-                        cell.castMemberImage = image
+                cell.castMemberName = person.name
+                Task.detached(priority: .userInitiated) {
+                    let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
+                    guard let data else { return }
+                    let image = UIImage(data: data)
+                    Task.detached { @MainActor in
+                        if index == collectionView.indexPath(for: cell) {
+                            cell.castMemberImage = image
+                        }
                     }
                 }
-            }
-            return cell
+                return cell
+            case let .language(language):
+                guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: LanguagesCell.description(),
+                    for: indexPath
+                ) as? LanguagesCell
+                else { return UICollectionViewCell() }
+                cell.title = language
+                return cell
 
-        case .language:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: LanguagesCell.description(),
-                for: indexPath
-            ) as? LanguagesCell
-            else { return UICollectionViewCell() }
-            cell.title = mediaItem.language
-            return cell
+            case let .similarMovie(similarMovie):
+                guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: WatchAlsoMediaItemCell.description(),
+                    for: indexPath
+                ) as? WatchAlsoMediaItemCell
+                else { return UICollectionViewCell() }
 
-        case .watchAlso:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: WatchAlsoMediaItemCell.description(),
-                for: indexPath
-            ) as? WatchAlsoMediaItemCell
-            else { return UICollectionViewCell() }
-
-            cell.title = mediaItem.similarMovies[indexPath.item].name
-            Task.detached(priority: .userInitiated) {
-                let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
-                guard let data else { return }
-                let image = UIImage(data: data)
-                Task.detached { @MainActor in
-                    if index == collectionView.indexPath(for: cell) {
-                        cell.posterImage = image
+                cell.title = similarMovie.name
+                Task.detached(priority: .userInitiated) {
+                    let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
+                    guard let data else { return }
+                    let image = UIImage(data: data)
+                    Task.detached { @MainActor in
+                        if index == collectionView.indexPath(for: cell) {
+                            cell.posterImage = image
+                        }
                     }
                 }
+                return cell
             }
-            return cell
         }
-    }
 
-    func collectionView(
-        _ collectionView: UICollectionView,
-        viewForSupplementaryElementOfKind kind: String,
-        at indexPath: IndexPath
-    ) -> UICollectionReusableView {
-        guard let view = collectionView.dequeueReusableSupplementaryView(
-            ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: HeaderReusableView.description(),
-            for: indexPath
-        ) as? HeaderReusableView
-        else { return UICollectionReusableView() }
+        dataSource.supplementaryViewProvider = { collectionView, _, indexPath in
+            guard let view = collectionView.dequeueReusableSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionHeader,
+                withReuseIdentifier: HeaderReusableView.description(),
+                for: indexPath
+            ) as? HeaderReusableView
+            else { return UICollectionReusableView() }
 
-        switch viewModel.mediaItemSections[indexPath.section] {
-        case .mainInfo:
-            break
-        case .cast:
-            view.title = Constants.sectionHeaderTitles[0]
-        case .language:
-            view.title = Constants.sectionHeaderTitles[1]
-        case .watchAlso:
-            view.title = Constants.sectionHeaderTitles[2]
+            switch self.viewModel.mediaItemSections[indexPath.section] {
+            case .mainInfo:
+                break
+            case .cast:
+                view.title = Constants.sectionHeaderTitles[0]
+            case .language:
+                view.title = Constants.sectionHeaderTitles[1]
+            case .watchAlso:
+                view.title = Constants.sectionHeaderTitles[2]
+            }
+            return view
         }
-        return view
+        return dataSource
     }
 }
 

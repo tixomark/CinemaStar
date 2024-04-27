@@ -60,9 +60,11 @@ final class MediaItemDetailViewModel {
 extension MediaItemDetailViewModel: MediaItemDetalViewModelProtocol {
     func viewLoaded() {
         Task.detached(priority: .userInitiated) {
-            guard let mediaItem = await self.networkService?.getMovieById(self.itemId) else { return }
+            guard var mediaItem = await self.networkService?.getMovieById(self.itemId) else { return }
             self.mediaItemSections = [.mainInfo]
             if !mediaItem.persons.isEmpty {
+                let personsSet = Set(mediaItem.persons)
+                mediaItem.persons = Array(personsSet)
                 self.mediaItemSections.append(.cast)
             }
             if mediaItem.language != nil {

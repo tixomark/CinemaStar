@@ -20,3 +20,13 @@ extension SimilarMovie {
         posterURL = dto.posterURL
     }
 }
+
+extension SimilarMovie: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: SimilarMovie, rhs: SimilarMovie) -> Bool {
+        lhs.id == rhs.id
+    }
+}

@@ -55,7 +55,6 @@ class MediaListView: UIViewController, UICollectionViewDelegate {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: mediaCollectionLayout)
         collection.backgroundColor = .clear
         collection.showsVerticalScrollIndicator = false
-        collection.dataSource = self
         collection.delegate = self
         collection.register(MediaItemCell.self, forCellWithReuseIdentifier: MediaItemCell.description())
         return collection
@@ -64,6 +63,12 @@ class MediaListView: UIViewController, UICollectionViewDelegate {
     // MARK: - Public Properties
 
     var viewModel: MediaListViewModelProtocol!
+
+    // MARK: - Private Properties
+
+    private lazy var mediaDataSource = createDataSource()
+
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +100,8 @@ class MediaListView: UIViewController, UICollectionViewDelegate {
             - mediaCollectionLayout.sectionInset.right
         let itemWidth = avalibleWidth / 2
         mediaCollectionLayout.estimatedItemSize = CGSize(width: itemWidth - 1, height: 300)
+
+        mediaCollectionView.dataSource = mediaDataSource
     }
 
     private func configureLayout() {
@@ -104,9 +111,21 @@ class MediaListView: UIViewController, UICollectionViewDelegate {
     }
 
     private func bindValues() {
-        viewModel.state.bind { [weak self] _ in
+        viewModel.state.bind { [weak self] state in
             Task { @MainActor in
-                self?.mediaCollectionView.reloadData()
+                switch state {
+                case .loading:
+                    var snapshot = NSDiffableDataSourceSnapshot<Section, Doc>()
+                    snapshot.appendSections([.first])
+                    self?.mediaDataSource.apply(snapshot, animatingDifferences: true)
+                case let .data(docs):
+                    var snapshot = NSDiffableDataSourceSnapshot<Section, Doc>()
+                    snapshot.appendSections([.first])
+                    snapshot.appendItems(docs, toSection: .first)
+                    self?.mediaDataSource.apply(snapshot, animatingDifferences: true)
+                case .noData, .error:
+                    break
+                }
             }
         }
     }
@@ -129,34 +148,23 @@ class MediaListView: UIViewController, UICollectionViewDelegate {
     }
 }
 
-extension MediaListView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch viewModel.state.value {
-        case .loading:
-            0
-        case let .data(data):
-            data.count
-        case .noData, .error:
-            0
-        }
+// MARK: Diffable Datasource methods
+
+extension MediaListView {
+    enum Section {
+        case first
     }
 
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
-        switch viewModel.state.value {
-        case .loading:
-            return UICollectionViewCell()
-        case let .data(data):
+    typealias MediaDataSource = UICollectionViewDiffableDataSource<Section, Doc>
+
+    private func createDataSource() -> MediaDataSource {
+        let dataSource = MediaDataSource(collectionView: mediaCollectionView) { collectionView, indexPath, doc in
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: MediaItemCell.description(),
                 for: indexPath
             ) as? MediaItemCell
-            else {
-                return UICollectionViewCell()
-            }
-            cell.configure(withDoc: data[indexPath.item])
+            else { return UICollectionViewCell() }
+            cell.configure(withDoc: doc)
             Task.detached(priority: .userInitiated) {
                 let (data, index) = await self.viewModel.getImage(atIndex: indexPath.item)
                 guard let data else { return }
@@ -168,9 +176,8 @@ extension MediaListView: UICollectionViewDataSource {
                 }
             }
             return cell
-        case .noData, .error:
-            return UICollectionViewCell()
         }
+        return dataSource
     }
 }
 

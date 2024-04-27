@@ -22,7 +22,7 @@ struct MediaItem {
     /// Тип медиа обьекта
     let type: String?
     /// Список членов съемочной группы
-    let persons: [Person]
+    var persons: [Person]
     /// Язык
     let language: String?
     /// Список похожих медиа
@@ -42,5 +42,15 @@ extension MediaItem {
         persons = dto.persons?.compactMap { Person($0) } ?? []
         language = dto.language
         similarMovies = dto.similarMovies?.compactMap { SimilarMovie($0) } ?? []
+    }
+}
+
+extension MediaItem: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: MediaItem, rhs: MediaItem) -> Bool {
+        lhs.id == rhs.id
     }
 }
