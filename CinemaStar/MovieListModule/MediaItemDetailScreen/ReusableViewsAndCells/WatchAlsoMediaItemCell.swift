@@ -18,6 +18,7 @@ final class WatchAlsoMediaItemCell: UICollectionViewCell {
     private let titleLabel = {
         let label = UILabel()
         label.font = .inter(size: 16)
+        label.numberOfLines = 0
         label.textColor = .white
         return label
     }()

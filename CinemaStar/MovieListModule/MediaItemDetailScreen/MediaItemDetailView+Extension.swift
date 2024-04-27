@@ -5,7 +5,7 @@ import UIKit
 
 extension MediaItemDetailView {
     func createMainInfoLayoutSection() -> NSCollectionLayoutSection {
-        let item = createItem(width: 1, height: 1)
+        let item = createItem(width: .fractionalWidth(1), height: .estimated(410))
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(410))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
@@ -17,9 +17,9 @@ extension MediaItemDetailView {
     }
 
     func createCastLayoutSection() -> NSCollectionLayoutSection {
-        let item = createItem(width: 1, height: 1)
+        let item = createItem(width: .fractionalWidth(1), height: .estimated(90))
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.15), heightDimension: .estimated(97))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.15), heightDimension: .estimated(90))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
@@ -31,7 +31,7 @@ extension MediaItemDetailView {
     }
 
     func createLanguageLayoutSection() -> NSCollectionLayoutSection {
-        let item = createItem(width: 1, height: 1)
+        let item = createItem(width: .fractionalWidth(1), height: .fractionalHeight(1))
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(20))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
@@ -44,7 +44,7 @@ extension MediaItemDetailView {
     }
 
     func createWatchAlsoLayoutSection() -> NSCollectionLayoutSection {
-        let item = createItem(width: 1, height: 1)
+        let item = createItem(width: .fractionalWidth(1), height: .estimated(228))
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.44), heightDimension: .estimated(228))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -57,11 +57,11 @@ extension MediaItemDetailView {
         return section
     }
 
-    private func createItem(width: CGFloat, height: CGFloat) -> NSCollectionLayoutItem {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(width),
-            heightDimension: .fractionalHeight(height)
-        )
+    private func createItem(
+        width: NSCollectionLayoutDimension,
+        height: NSCollectionLayoutDimension
+    ) -> NSCollectionLayoutItem {
+        let itemSize = NSCollectionLayoutSize(widthDimension: width, heightDimension: height)
         return NSCollectionLayoutItem(layoutSize: itemSize)
     }
 

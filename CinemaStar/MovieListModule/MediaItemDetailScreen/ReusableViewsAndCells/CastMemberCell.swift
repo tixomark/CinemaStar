@@ -11,7 +11,7 @@ final class CastMemberCell: UICollectionViewCell {
 
     private let castMemberNameLabel = {
         let label = UILabel()
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.textColor = .white
         label.textAlignment = .center
         label.font = .inter(size: 8)
@@ -22,6 +22,7 @@ final class CastMemberCell: UICollectionViewCell {
         let stack = UIStackView(arrangedSubviews: [castMemberImageView, castMemberNameLabel])
         stack.axis = .vertical
         stack.alignment = .center
+        stack.spacing = 2
         return stack
     }()
 
@@ -84,7 +85,7 @@ final class CastMemberCell: UICollectionViewCell {
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             castMemberImageView.widthAnchor.constraint(equalTo: castMemberImageView.heightAnchor, multiplier: 0.64),
-            castMemberNameLabel.heightAnchor.constraint(equalTo: castMemberImageView.heightAnchor, multiplier: 0.33)
+            castMemberImageView.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.76)
         ].activate()
     }
 }
