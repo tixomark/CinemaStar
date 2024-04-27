@@ -63,6 +63,7 @@
 		9DB0BB482BDCD92B00AE2D98 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB472BDCD92B00AE2D98 /* FileManager+Extension.swift */; };
 		9DB0BB4A2BDCD98C00AE2D98 /* ImageLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB492BDCD98C00AE2D98 /* ImageLoadService.swift */; };
 		9DB0BB4D2BDCDA2C00AE2D98 /* ImageLoadProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB4C2BDCDA2C00AE2D98 /* ImageLoadProxy.swift */; };
+		9DB0BB512BDD1FEF00AE2D98 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB502BDD1FEF00AE2D98 /* UIAlertController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 		9DB0BB472BDCD92B00AE2D98 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		9DB0BB492BDCD98C00AE2D98 /* ImageLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadService.swift; sourceTree = "<group>"; };
 		9DB0BB4C2BDCDA2C00AE2D98 /* ImageLoadProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadProxy.swift; sourceTree = "<group>"; };
+		9DB0BB502BDD1FEF00AE2D98 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				9D2BECCB2BD6E2A000337AA0 /* UIView+Extension.swift */,
 				9D2BECD72BD6EEB100337AA0 /* UIFont+Extension.swift */,
 				9DB0BB472BDCD92B00AE2D98 /* FileManager+Extension.swift */,
+				9DB0BB502BDD1FEF00AE2D98 /* UIAlertController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				9D2BECFF2BDBD09B00337AA0 /* LanguageDTO.swift in Sources */,
 				9D2BED122BDC15A000337AA0 /* NetworkServiceProtocol.swift in Sources */,
 				9D2BECD82BD6EEB100337AA0 /* UIFont+Extension.swift in Sources */,
+				9DB0BB512BDD1FEF00AE2D98 /* UIAlertController+Extension.swift in Sources */,
 				9D2BEC9C2BD6AA0B00337AA0 /* MediaListView.swift in Sources */,
 				9DB0BB4A2BDCD98C00AE2D98 /* ImageLoadService.swift in Sources */,
 				9D2BECCC2BD6E2A000337AA0 /* UIView+Extension.swift in Sources */,

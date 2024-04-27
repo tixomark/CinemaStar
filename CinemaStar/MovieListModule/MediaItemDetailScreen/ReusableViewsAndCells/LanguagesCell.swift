@@ -43,8 +43,6 @@ final class LanguagesCell: UICollectionViewCell {
     // MARK: - Private Methods
 
     private func configureUI() {
-        languagesLabel.backgroundColor = .blue
-        contentView.backgroundColor = .green
         contentView.addSubviews(languagesLabel)
     }
 

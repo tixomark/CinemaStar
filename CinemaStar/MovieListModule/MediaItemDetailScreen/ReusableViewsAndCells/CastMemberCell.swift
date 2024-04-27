@@ -59,6 +59,13 @@ final class CastMemberCell: UICollectionViewCell {
         configureLayout()
     }
 
+    // MARK: - Public Methods
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        castMemberImage = nil
+    }
+
     // MARK: - Private Methods
 
     private func configureUI() {

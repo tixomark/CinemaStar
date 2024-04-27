@@ -63,6 +63,13 @@ final class WatchAlsoMediaItemCell: UICollectionViewCell {
         configureLayout()
     }
 
+    // MARK: - Public Methods
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        posterImage = nil
+    }
+
     // MARK: - Private Methods
 
     private func configureUI() {
