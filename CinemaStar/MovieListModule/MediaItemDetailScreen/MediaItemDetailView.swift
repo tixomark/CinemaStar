@@ -126,9 +126,15 @@ final class MediaItemDetailView: UIViewController {
                 self?.showUnderDevelopmentAlert()
             }
         }
+        viewModel.isFavourite.bind { [weak self] isFavourite in
+            let image: UIImage = isFavourite ? .heartIconFilled : .heartIcon
+            self?.likeButton.setImage(image, for: .normal)
+        }
     }
 
-    @objc private func likeButtonTapped() {}
+    @objc private func likeButtonTapped() {
+        viewModel.didTapLikeButton()
+    }
 }
 
 extension MediaItemDetailView: UICollectionViewDataSource {

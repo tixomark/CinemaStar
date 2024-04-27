@@ -3,12 +3,17 @@
 
 import Foundation
 
+/// Протокол взаимодействия с `MediaItemDetailViewModel`
 protocol MediaItemDetalViewModelProtocol: AnyObject {
+    /// Списов доступных разделов с данными для текущего медиа объекта
     var mediaItemSections: [MediaItemDataSection] { get }
     /// Состояние загрузки данных по объекту
     var state: Dynamic<ViewState<MediaItem>> { get }
     /// Состояние просмотра
     var isWatching: Dynamic<Bool> { get }
+    /// Является ли медиа объект любимым
+    var isFavourite: Dynamic<Bool> { get }
+
     /// Сообщает о том что вью загрузилась
     func viewLoaded()
     /// Просит загрузить картинку для ячейки по индексу
@@ -17,6 +22,8 @@ protocol MediaItemDetalViewModelProtocol: AnyObject {
     func watchButtonTapped()
     /// Сообщает о закрытии уведомления о разработке функционала
     func underDevelopmentMessageDidClose()
+    /// Сообщает о назатии на кнопку добавления в исзранное
+    func didTapLikeButton()
 }
 
 final class MediaItemDetailViewModel {
@@ -24,6 +31,7 @@ final class MediaItemDetailViewModel {
 
     private(set) var state = Dynamic<ViewState<MediaItem>>(.loading)
     private(set) var isWatching = Dynamic(false)
+    private(set) var isFavourite = Dynamic(false)
 
     // MARK: - Private Properties
 
@@ -65,6 +73,8 @@ extension MediaItemDetailViewModel: MediaItemDetalViewModelProtocol {
             }
             self.state.value = .data(mediaItem)
         }
+
+        isFavourite.value = UserDefaults.standard.bool(forKey: itemId.description)
     }
 
     func getImage(atIndexPath indexPath: IndexPath) async -> (Data?, IndexPath) {
@@ -95,5 +105,15 @@ extension MediaItemDetailViewModel: MediaItemDetalViewModelProtocol {
 
     func underDevelopmentMessageDidClose() {
         isWatching.value = false
+    }
+
+    func didTapLikeButton() {
+        isFavourite.value.toggle()
+        switch isFavourite.value {
+        case true:
+            UserDefaults.standard.setValue(true, forKey: itemId.description)
+        case false:
+            UserDefaults.standard.removeObject(forKey: itemId.description)
+        }
     }
 }
