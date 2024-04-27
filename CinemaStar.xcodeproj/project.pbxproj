@@ -12,7 +12,6 @@
 		9D2BEC9C2BD6AA0B00337AA0 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BEC9B2BD6AA0B00337AA0 /* MediaListView.swift */; };
 		9D2BECA12BD6AA0D00337AA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BECA02BD6AA0D00337AA0 /* Assets.xcassets */; };
 		9D2BECA42BD6AA0D00337AA0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BECA32BD6AA0D00337AA0 /* Base */; };
-		9D2BECAD2BD6B0DE00337AA0 /* KeyChainPKJ in Frameworks */ = {isa = PBXBuildFile; productRef = 9D2BECAC2BD6B0DE00337AA0 /* KeyChainPKJ */; };
 		9D2BECB22BD6B1DE00337AA0 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BECB02BD6B1DE00337AA0 /* .swiftformat */; };
 		9D2BECB32BD6B1DE00337AA0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BECB12BD6B1DE00337AA0 /* .swiftlint.yml */; };
 		9D2BECB62BD6BB6100337AA0 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BECB52BD6BB6100337AA0 /* MediaListViewModel.swift */; };
@@ -64,6 +63,8 @@
 		9DB0BB4A2BDCD98C00AE2D98 /* ImageLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB492BDCD98C00AE2D98 /* ImageLoadService.swift */; };
 		9DB0BB4D2BDCDA2C00AE2D98 /* ImageLoadProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB4C2BDCDA2C00AE2D98 /* ImageLoadProxy.swift */; };
 		9DB0BB512BDD1FEF00AE2D98 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB502BDD1FEF00AE2D98 /* UIAlertController+Extension.swift */; };
+		9DB0BB532BDD33D600AE2D98 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB522BDD33D600AE2D98 /* KeyChainService.swift */; };
+		9DCA8E752BDD3FD10061057F /* KeyChainPKJ in Frameworks */ = {isa = PBXBuildFile; productRef = 9DCA8E742BDD3FD10061057F /* KeyChainPKJ */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		9DB0BB492BDCD98C00AE2D98 /* ImageLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadService.swift; sourceTree = "<group>"; };
 		9DB0BB4C2BDCDA2C00AE2D98 /* ImageLoadProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadProxy.swift; sourceTree = "<group>"; };
 		9DB0BB502BDD1FEF00AE2D98 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		9DB0BB522BDD33D600AE2D98 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DCA8E752BDD3FD10061057F /* KeyChainPKJ in Frameworks */,
 				9D2BECCF2BD6EC9700337AA0 /* AdvancedNSAttributedStringPKJ in Frameworks */,
-				9D2BECAD2BD6B0DE00337AA0 /* KeyChainPKJ in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +254,7 @@
 			children = (
 				9D2BECF02BDAEEAD00337AA0 /* ServiceProtocol.swift */,
 				9D2BED132BDC192100337AA0 /* ServiceLocator.swift */,
+				9DB0BB522BDD33D600AE2D98 /* KeyChainService.swift */,
 				9D2BECF22BDB932A00337AA0 /* NetworkService */,
 				9DB0BB4B2BDCD99000AE2D98 /* ImageLoadService */,
 			);
@@ -357,8 +360,8 @@
 			);
 			name = CinemaStar;
 			packageProductDependencies = (
-				9D2BECAC2BD6B0DE00337AA0 /* KeyChainPKJ */,
 				9D2BECCE2BD6EC9700337AA0 /* AdvancedNSAttributedStringPKJ */,
+				9DCA8E742BDD3FD10061057F /* KeyChainPKJ */,
 			);
 			productName = CinemaStar;
 			productReference = 9D2BEC942BD6AA0B00337AA0 /* CinemaStar.app */;
@@ -389,8 +392,8 @@
 			);
 			mainGroup = 9D2BEC8B2BD6AA0B00337AA0;
 			packageReferences = (
-				9D2BECAB2BD6B0DE00337AA0 /* XCRemoteSwiftPackageReference "KeyChainPKJ" */,
 				9D2BECCD2BD6EC9700337AA0 /* XCRemoteSwiftPackageReference "AdvancedNSAttributedStringPKJ" */,
+				9DCA8E732BDD3FD10061057F /* XCRemoteSwiftPackageReference "KeyChainPKJ" */,
 			);
 			productRefGroup = 9D2BEC952BD6AA0B00337AA0 /* Products */;
 			projectDirPath = "";
@@ -495,6 +498,7 @@
 				9D2BED0C2BDC11C800337AA0 /* DataFetching.swift in Sources */,
 				9D2BEC982BD6AA0B00337AA0 /* AppDelegate.swift in Sources */,
 				9D2BECBA2BD6BEC500337AA0 /* Coordinator.swift in Sources */,
+				9DB0BB532BDD33D600AE2D98 /* KeyChainService.swift in Sources */,
 				9D2BED182BDC464600337AA0 /* ViewState.swift in Sources */,
 				9D2BECCA2BD6E28200337AA0 /* Array+Extension.swift in Sources */,
 				9D2BECC72BD6E25400337AA0 /* NSLayoutConstraint+Extension.swift in Sources */,
@@ -730,14 +734,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9D2BECAB2BD6B0DE00337AA0 /* XCRemoteSwiftPackageReference "KeyChainPKJ" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tixomark/KeyChainPKJ.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		9D2BECCD2BD6EC9700337AA0 /* XCRemoteSwiftPackageReference "AdvancedNSAttributedStringPKJ" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tixomark/AdvancedNSAttributedStringPKJ.git";
@@ -746,18 +742,26 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		9DCA8E732BDD3FD10061057F /* XCRemoteSwiftPackageReference "KeyChainPKJ" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tixomark/KeyChainPKJ.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9D2BECAC2BD6B0DE00337AA0 /* KeyChainPKJ */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D2BECAB2BD6B0DE00337AA0 /* XCRemoteSwiftPackageReference "KeyChainPKJ" */;
-			productName = KeyChainPKJ;
-		};
 		9D2BECCE2BD6EC9700337AA0 /* AdvancedNSAttributedStringPKJ */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9D2BECCD2BD6EC9700337AA0 /* XCRemoteSwiftPackageReference "AdvancedNSAttributedStringPKJ" */;
 			productName = AdvancedNSAttributedStringPKJ;
+		};
+		9DCA8E742BDD3FD10061057F /* KeyChainPKJ */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DCA8E732BDD3FD10061057F /* XCRemoteSwiftPackageReference "KeyChainPKJ" */;
+			productName = KeyChainPKJ;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

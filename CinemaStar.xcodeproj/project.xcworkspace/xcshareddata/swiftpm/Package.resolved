@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tixomark/KeyChainPKJ.git",
       "state" : {
-        "revision" : "cc5580ae0b9443138d2e5a6730c012aed7b7b850",
-        "version" : "1.0.0"
+        "revision" : "41a7206082afc9994ed2f8234f8b8861e9ee34cf",
+        "version" : "1.0.4"
       }
     }
   ],

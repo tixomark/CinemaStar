@@ -16,6 +16,12 @@ final class NetworkService: ServiceProtocol, NetworkServiceProtocol, DataFetchin
         static let apiKeyHeader = "X-API-KEY"
     }
 
+    // MARK: - Private Properties
+
+    private var apiKey: String? {
+        KeyChainService.getValue(byKey: Constants.apiKeyHeader)
+    }
+
     // MARK: - Public Properties
 
     var description: String {
@@ -35,18 +41,18 @@ extension NetworkService: URLRequestBuilding {
     func createSearchMovieURLRequest() -> URLRequest? {
         var components = baseUrlComponents
         components.queryItems = [.init(name: Constants.queryParam, value: "История")]
-        guard var url = components.url else { return nil }
+        guard var url = components.url, let apiKey else { return nil }
         url.append(path: Constants.searchPathComponent)
         var request = URLRequest(url: url)
-        request.addValue("Y74K3SM-KZZ4ZEV-J36J656-GVPJ2CB", forHTTPHeaderField: Constants.apiKeyHeader)
+        request.addValue(apiKey, forHTTPHeaderField: Constants.apiKeyHeader)
         return request
     }
 
     func createGetMovieByIdURLRequest(_ id: Int) -> URLRequest? {
-        guard var url = baseUrlComponents.url else { return nil }
+        guard var url = baseUrlComponents.url, let apiKey else { return nil }
         url.append(path: id.description)
         var request = URLRequest(url: url)
-        request.addValue("Y74K3SM-KZZ4ZEV-J36J656-GVPJ2CB", forHTTPHeaderField: Constants.apiKeyHeader)
+        request.addValue(apiKey, forHTTPHeaderField: Constants.apiKeyHeader)
         return request
     }
 }
