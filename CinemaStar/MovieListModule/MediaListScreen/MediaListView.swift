@@ -69,6 +69,8 @@ class MediaListView: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         configureUI()
         configureLayout()
+        bindValues()
+        viewModel.viewLoaded()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +103,14 @@ class MediaListView: UIViewController, UICollectionViewDelegate {
         mediaCollectionViewConfigureLayout()
     }
 
+    private func bindValues() {
+        viewModel.state.bind { [weak self] _ in
+            Task { @MainActor in
+                self?.mediaCollectionView.reloadData()
+            }
+        }
+    }
+
     private func titleLabelConfigureLayout() {
         [
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -121,25 +131,36 @@ class MediaListView: UIViewController, UICollectionViewDelegate {
 
 extension MediaListView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        11
+        switch viewModel.state.value {
+        case .loading:
+            0
+        case let .data(data):
+            data.count
+        case .noData, .error:
+            0
+        }
     }
 
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: MediaItemCell.description(),
-            for: indexPath
-        ) as? MediaItemCell
-        else {
+        switch viewModel.state.value {
+        case .loading:
+            return UICollectionViewCell()
+        case let .data(data):
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: MediaItemCell.description(),
+                for: indexPath
+            ) as? MediaItemCell
+            else {
+                return UICollectionViewCell()
+            }
+            cell.configure(withDoc: data[indexPath.item])
+            return cell
+        case .noData, .error:
             return UICollectionViewCell()
         }
-
-        let text = indexPath.item % 3 == 0 ? "MOview asf  \n asdf" : "Hello"
-        cell.configure(title: text, rating: nil)
-
-        return cell
     }
 }
 

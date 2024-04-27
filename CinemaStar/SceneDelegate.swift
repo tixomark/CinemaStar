@@ -18,8 +18,16 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func createWindow(with scene: UIScene) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        appCoordinator = AppCoordinator(window: window, builder: ModuleBuilder())
+        let builder = ModuleBuilder(serviceLocator: createServiceLocator())
+        appCoordinator = AppCoordinator(window: window, builder: builder)
         appCoordinator?.start()
         window?.makeKeyAndVisible()
+    }
+
+    private func createServiceLocator() -> ServiceLocatorProtocol {
+        let networkService = NetworkService()
+        let serviceDistributor = ServiceDistributor()
+        serviceDistributor.registerService(service: networkService)
+        return serviceDistributor
     }
 }

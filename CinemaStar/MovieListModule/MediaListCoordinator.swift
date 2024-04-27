@@ -6,7 +6,7 @@ import UIKit
 /// Интерфейс взаимодействия с MediaListCoordinator
 protocol MediaListCoordinatorProtocol: AnyObject {
     /// Показфвает экран детальной информации по медиа объекту
-    func showMediaItemDetailScreen()
+    func showMediaDetailScreenForItem(withId id: Int)
 }
 
 /// Координатор модуля списка медиа
@@ -35,8 +35,8 @@ final class MediaListCoordinator: BaseCoordinator {
 }
 
 extension MediaListCoordinator: MediaListCoordinatorProtocol {
-    func showMediaItemDetailScreen() {
-        let movieDetailView = builder.buildMovieDetailScreen(coordinator: self)
+    func showMediaDetailScreenForItem(withId id: Int) {
+        let movieDetailView = builder.buildMovieDetailScreen(itemId: id, coordinator: self)
         rootController.pushViewController(movieDetailView, animated: true)
     }
 }

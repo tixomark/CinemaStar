@@ -91,19 +91,19 @@ final class MediaItemMainInfoCell: UICollectionViewCell {
         configureLayout()
     }
 
-    func configure(title: String, rating: Float?, plot: String, metadata: String) {
-        titleLabel.text = title
-        if let rating {
+    func configure(with item: MediaItem) {
+        titleLabel.text = item.name
+        if let rating = item.rating {
             ratingLabel.text = "⭐️ \(rating)"
         }
-
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineSpacing = 4
-        plotLabel.attributedText = plot.attributed()
+        plotLabel.attributedText = item.description.attributed()
             .withParagraphStyle(paragraph)
             .withFont(.inter(size: 14))
             .withColor(.white)
-        metadataLabel.text = metadata
+        let metadataParams = [item.year?.description, item.country, item.type].compactMap { $0 }
+        metadataLabel.text = metadataParams.joined(separator: " / ")
     }
 
     // MARK: - Private Methods

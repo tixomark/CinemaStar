@@ -19,7 +19,6 @@ final class MediaItemCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .inter(size: 16)
         label.textColor = .white
-        label.numberOfLines = 0
         return label
     }()
 
@@ -81,10 +80,10 @@ final class MediaItemCell: UICollectionViewCell {
         return layoutAttributes
     }
 
-    func configure(title: String?, rating: Float?) {
-        titleLabel.text = title
-        if let rating {
-            ratingLabel.text = "⭐️ \(rating)"
+    func configure(withDoc doc: Doc) {
+        titleLabel.text = doc.name
+        if let rating = doc.rating {
+            ratingLabel.text = "⭐️  \(String(format: "%.1f", rating))"
         }
     }
 

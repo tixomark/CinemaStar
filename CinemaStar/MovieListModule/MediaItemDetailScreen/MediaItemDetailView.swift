@@ -88,6 +88,8 @@ final class MediaItemDetailView: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureLayout()
+        bindValues()
+        viewModel?.viewLoaded()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -116,6 +118,14 @@ final class MediaItemDetailView: UIViewController {
         collectionViewConfigureLayout()
     }
 
+    private func bindValues() {
+        viewModel?.state.bind { [weak self] _ in
+            Task { @MainActor in
+                self?.collectionView.reloadData()
+            }
+        }
+    }
+
     private func collectionViewConfigureLayout() {
         [
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -134,15 +144,16 @@ extension MediaItemDetailView: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard case let .data(mediaItem) = viewModel?.state.value else { return 0 }
         switch collectionViewSections[section] {
         case .mainInfo:
-            1
+            return 1
         case .cast:
-            10
+            return mediaItem.persons.count
         case .language:
-            1
+            return 1
         case .watchAlso:
-            5
+            return mediaItem.similarMovies.count
         }
     }
 
@@ -150,6 +161,7 @@ extension MediaItemDetailView: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
+        guard case let .data(mediaItem) = viewModel?.state.value else { return UICollectionViewCell() }
         switch collectionViewSections[indexPath.section] {
         case .mainInfo:
             guard let cell = collectionView.dequeueReusableCell(
@@ -157,40 +169,34 @@ extension MediaItemDetailView: UICollectionViewDataSource {
                 for: indexPath
             ) as? MediaItemMainInfoCell
             else { return UICollectionViewCell() }
-            cell.configure(
-                title: "Демон революции sadfasdfads",
-                rating: 6.2,
-                plot:
-                """
-                1915 год. Европа охвачена огнем Первой мировой войны.
-                В это время теоретик революции, политический эмигрант и авантюрист
-                Александр Парвус проводит переговоры с министром иностранных дел ...
-                """,
-                metadata: "2017 / Россия / Сериал"
-            )
+            cell.configure(with: mediaItem)
             return cell
+
         case .cast:
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: CastMemberCell.description(),
                 for: indexPath
             ) as? CastMemberCell
             else { return UICollectionViewCell() }
-            cell.castMemberName = "namename surnameeeee"
+            cell.castMemberName = mediaItem.persons[indexPath.item].name
             return cell
+
         case .language:
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: LanguagesCell.description(),
                 for: indexPath
             ) as? LanguagesCell
             else { return UICollectionViewCell() }
-            cell.title = "Русский"
+            cell.title = mediaItem.language
             return cell
+
         case .watchAlso:
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: WatchAlsoMediaItemCell.description(),
                 for: indexPath
             ) as? WatchAlsoMediaItemCell
             else { return UICollectionViewCell() }
+            cell.title = mediaItem.similarMovies[indexPath.item].name
             return cell
         }
     }
