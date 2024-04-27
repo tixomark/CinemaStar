@@ -41,7 +41,8 @@ final class ModuleBuilder: Builder {
         let viewModel = MediaItemDetailViewModel(
             itemId: itemId,
             coordinator: coordinator,
-            networkService: serviceLocator.getService(NetworkService.self)
+            networkService: serviceLocator.getService(NetworkService.self),
+            imageLoadService: serviceLocator.getService(ImageLoadProxy.self)
         )
         view.viewModel = viewModel
         return view

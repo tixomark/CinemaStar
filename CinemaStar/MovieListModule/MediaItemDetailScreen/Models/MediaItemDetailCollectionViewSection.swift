@@ -4,7 +4,7 @@
 import Foundation
 
 /// Тип секции по которым разбито отображение информации о медиа объекте
-enum MediaItemDetailCollectionViewSection {
+enum MediaItemDataSection {
     case mainInfo
     case cast
     case language

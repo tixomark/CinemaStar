@@ -14,6 +14,8 @@ struct Person {
 extension Person {
     init(_ dto: PersonDTO) {
         name = dto.name
-        photoUrl = dto.photoUrl
+        photoUrl = dto.photoUrl?
+            .replacingOccurrences(of: "//", with: "/")
+            .replacingOccurrences(of: "https:/", with: "https://")
     }
 }

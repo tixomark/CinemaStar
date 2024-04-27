@@ -161,7 +161,7 @@ extension MediaListView: UICollectionViewDataSource {
                 let (data, index) = await self.viewModel.getImage(atIndex: indexPath.item)
                 guard let data else { return }
                 let image = UIImage(data: data)
-                Task { @MainActor in
+                Task.detached { @MainActor in
                     if index == collectionView.indexPath(for: cell)?.item {
                         cell.posterImage = image
                     }

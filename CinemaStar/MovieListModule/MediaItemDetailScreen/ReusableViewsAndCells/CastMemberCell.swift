@@ -62,9 +62,6 @@ final class CastMemberCell: UICollectionViewCell {
     // MARK: - Private Methods
 
     private func configureUI() {
-        castMemberImageView.backgroundColor = .red
-        castMemberNameLabel.backgroundColor = .blue
-        contentView.backgroundColor = .lightGray
         contentView.addSubviews(stackView)
     }
 

@@ -9,4 +9,9 @@ struct PersonDTO: Decodable {
     let photoUrl: String?
     /// Имя
     let name: String?
+
+    enum CodingKeys: String, CodingKey {
+        case photoUrl = "photo"
+        case name
+    }
 }

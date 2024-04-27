@@ -19,7 +19,6 @@ final class WatchAlsoMediaItemCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .inter(size: 16)
         label.textColor = .white
-        label.numberOfLines = 0
         return label
     }()
 
@@ -67,9 +66,6 @@ final class WatchAlsoMediaItemCell: UICollectionViewCell {
     // MARK: - Private Methods
 
     private func configureUI() {
-        posterImageView.backgroundColor = .red
-        titleLabel.backgroundColor = .blue
-        contentView.backgroundColor = .cyan
         contentView.addSubview(stackView)
     }
 

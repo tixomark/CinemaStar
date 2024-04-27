@@ -16,6 +16,7 @@ final class MediaItemMainInfoCell: UICollectionViewCell {
     private let posterImageView = {
         let view = UIImageView()
         view.clipsToBounds = true
+        view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 8
         view.layer.cornerCurve = .continuous
         return view
@@ -77,6 +78,17 @@ final class MediaItemMainInfoCell: UICollectionViewCell {
         return button
     }()
 
+    // MARK: - Public Properties
+
+    var posterImage: UIImage? {
+        get {
+            posterImageView.image
+        }
+        set(newImage) {
+            posterImageView.image = newImage
+        }
+    }
+
     // MARK: - Initializers
 
     override init(frame: CGRect) {
@@ -91,10 +103,12 @@ final class MediaItemMainInfoCell: UICollectionViewCell {
         configureLayout()
     }
 
+    // MARK: - Public Methods
+
     func configure(with item: MediaItem) {
         titleLabel.text = item.name
         if let rating = item.rating {
-            ratingLabel.text = "⭐️ \(rating)"
+            ratingLabel.text = "⭐️ \(String(format: "%.1f", rating))"
         }
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineSpacing = 4
@@ -109,12 +123,6 @@ final class MediaItemMainInfoCell: UICollectionViewCell {
     // MARK: - Private Methods
 
     private func configureUI() {
-        posterImageView.backgroundColor = .red
-        titleLabel.backgroundColor = .blue
-        ratingLabel.backgroundColor = .magenta
-        plotLabel.backgroundColor = .purple
-        metadataLabel.backgroundColor = .orange
-        contentView.backgroundColor = .lightGray
         contentView.addSubviews(movieStackView, watchButton, plotLabel, metadataLabel)
     }
 

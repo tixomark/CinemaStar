@@ -42,8 +42,6 @@ final class HeaderReusableView: UICollectionReusableView {
     // MARK: - Private Methods
 
     private func configureUI() {
-        headerLabel.backgroundColor = .systemPink
-        backgroundColor = .magenta
         addSubviews(headerLabel)
     }
 

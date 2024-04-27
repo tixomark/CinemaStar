@@ -32,11 +32,8 @@ final class MediaItemDetailView: UIViewController {
 
     private lazy var compositionalLayout =
         UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ -> NSCollectionLayoutSection? in
-            guard let self,
-                  self.collectionViewSections.indices.contains(sectionIndex)
-            else { return nil }
-
-            switch self.collectionViewSections[sectionIndex] {
+            guard let self, let section = self.viewModel?.mediaItemSections[sectionIndex] else { return nil }
+            switch section {
             case .mainInfo:
                 return self.createMainInfoLayoutSection()
             case .cast:
@@ -71,16 +68,7 @@ final class MediaItemDetailView: UIViewController {
 
     // MARK: - Public Properties
 
-    var viewModel: MediaItemDetalViewModelProtocol?
-
-    // MARK: - Private Properties
-
-    private let collectionViewSections: [MediaItemDetailCollectionViewSection] = [
-        .mainInfo,
-        .cast,
-        .language,
-        .watchAlso
-    ]
+    var viewModel: MediaItemDetalViewModelProtocol!
 
     // MARK: - Life Cycle
 
@@ -89,7 +77,7 @@ final class MediaItemDetailView: UIViewController {
         configureUI()
         configureLayout()
         bindValues()
-        viewModel?.viewLoaded()
+        viewModel.viewLoaded()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -119,8 +107,8 @@ final class MediaItemDetailView: UIViewController {
     }
 
     private func bindValues() {
-        viewModel?.state.bind { [weak self] _ in
-            Task { @MainActor in
+        viewModel.state.bind { [weak self] _ in
+            Task.detached { @MainActor in
                 self?.collectionView.reloadData()
             }
         }
@@ -140,12 +128,13 @@ final class MediaItemDetailView: UIViewController {
 
 extension MediaItemDetailView: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        collectionViewSections.count
+        viewModel?.mediaItemSections.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard case let .data(mediaItem) = viewModel?.state.value else { return 0 }
-        switch collectionViewSections[section] {
+        let section = viewModel.mediaItemSections[section]
+        switch section {
         case .mainInfo:
             return 1
         case .cast:
@@ -161,15 +150,29 @@ extension MediaItemDetailView: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard case let .data(mediaItem) = viewModel?.state.value else { return UICollectionViewCell() }
-        switch collectionViewSections[indexPath.section] {
+        guard case let .data(mediaItem) = viewModel?.state.value,
+              let section = viewModel?.mediaItemSections[indexPath.section]
+        else { return UICollectionViewCell() }
+
+        switch section {
         case .mainInfo:
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: MediaItemMainInfoCell.description(),
                 for: indexPath
             ) as? MediaItemMainInfoCell
             else { return UICollectionViewCell() }
+
             cell.configure(with: mediaItem)
+            Task.detached(priority: .userInitiated) {
+                let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
+                guard let data else { return }
+                let image = UIImage(data: data)
+                Task.detached { @MainActor in
+                    if index == collectionView.indexPath(for: cell) {
+                        cell.posterImage = image
+                    }
+                }
+            }
             return cell
 
         case .cast:
@@ -178,7 +181,18 @@ extension MediaItemDetailView: UICollectionViewDataSource {
                 for: indexPath
             ) as? CastMemberCell
             else { return UICollectionViewCell() }
+
             cell.castMemberName = mediaItem.persons[indexPath.item].name
+            Task.detached(priority: .userInitiated) {
+                let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
+                guard let data else { return }
+                let image = UIImage(data: data)
+                Task.detached { @MainActor in
+                    if index == collectionView.indexPath(for: cell) {
+                        cell.castMemberImage = image
+                    }
+                }
+            }
             return cell
 
         case .language:
@@ -196,7 +210,18 @@ extension MediaItemDetailView: UICollectionViewDataSource {
                 for: indexPath
             ) as? WatchAlsoMediaItemCell
             else { return UICollectionViewCell() }
+
             cell.title = mediaItem.similarMovies[indexPath.item].name
+            Task.detached(priority: .userInitiated) {
+                let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
+                guard let data else { return }
+                let image = UIImage(data: data)
+                Task.detached { @MainActor in
+                    if index == collectionView.indexPath(for: cell) {
+                        cell.posterImage = image
+                    }
+                }
+            }
             return cell
         }
     }
@@ -213,7 +238,16 @@ extension MediaItemDetailView: UICollectionViewDataSource {
         ) as? HeaderReusableView
         else { return UICollectionReusableView() }
 
-        view.title = Constants.sectionHeaderTitles[indexPath.section - 1]
+        switch viewModel.mediaItemSections[indexPath.section] {
+        case .mainInfo:
+            break
+        case .cast:
+            view.title = Constants.sectionHeaderTitles[0]
+        case .language:
+            view.title = Constants.sectionHeaderTitles[1]
+        case .watchAlso:
+            view.title = Constants.sectionHeaderTitles[2]
+        }
         return view
     }
 }

@@ -19,7 +19,7 @@ struct SimilarMovieDTO: Decodable {
     }
 
     enum PosterCodingKeys: String, CodingKey {
-        case url
+        case previewUrl
     }
 
     init(from decoder: any Decoder) throws {
@@ -28,6 +28,6 @@ struct SimilarMovieDTO: Decodable {
         name = try container.decodeIfPresent(String.self, forKey: .name)
 
         let posterContainer = try container.nestedContainer(keyedBy: PosterCodingKeys.self, forKey: .posterURL)
-        posterURL = try posterContainer.decodeIfPresent(String.self, forKey: .url)
+        posterURL = try posterContainer.decodeIfPresent(String.self, forKey: .previewUrl)
     }
 }
