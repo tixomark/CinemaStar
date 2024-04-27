@@ -80,19 +80,21 @@ final class MediaItemCell: UICollectionViewCell {
         return layoutAttributes
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        posterImage = nil
+    }
+
     func configure(withDoc doc: Doc) {
         titleLabel.text = doc.name
         if let rating = doc.rating {
-            ratingLabel.text = "⭐️  \(String(format: "%.1f", rating))"
+            ratingLabel.text = "⭐️ \(String(format: "%.1f", rating))"
         }
     }
 
     // MARK: - Private Methods
 
     private func configureUI() {
-        posterImageView.backgroundColor = .red
-        titleLabel.backgroundColor = .blue
-        ratingLabel.backgroundColor = .cyan
         contentView.addSubview(stackView)
     }
 

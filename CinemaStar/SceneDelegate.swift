@@ -26,8 +26,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func createServiceLocator() -> ServiceLocatorProtocol {
         let networkService = NetworkService()
+        let imageLoadService = ImageLoadService()
+        let imageloadProxy = ImageLoadProxy(imageLoadService: imageLoadService)
+
         let serviceDistributor = ServiceDistributor()
         serviceDistributor.registerService(service: networkService)
+        serviceDistributor.registerService(service: imageLoadService)
+        serviceDistributor.registerService(service: imageloadProxy)
         return serviceDistributor
     }
 }

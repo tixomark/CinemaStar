@@ -60,6 +60,9 @@
 		9D2BED1E2BDC604700337AA0 /* SimilarMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2BED1D2BDC604700337AA0 /* SimilarMovie.swift */; };
 		9DB0BB452BDC69E600AE2D98 /* Movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BED1F2BDC62D600337AA0 /* Movie.json */; };
 		9DB0BB462BDC69E600AE2D98 /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D2BED212BDC631E00337AA0 /* Movies.json */; };
+		9DB0BB482BDCD92B00AE2D98 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB472BDCD92B00AE2D98 /* FileManager+Extension.swift */; };
+		9DB0BB4A2BDCD98C00AE2D98 /* ImageLoadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB492BDCD98C00AE2D98 /* ImageLoadService.swift */; };
+		9DB0BB4D2BDCDA2C00AE2D98 /* ImageLoadProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0BB4C2BDCDA2C00AE2D98 /* ImageLoadProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +119,9 @@
 		9D2BED1D2BDC604700337AA0 /* SimilarMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarMovie.swift; sourceTree = "<group>"; };
 		9D2BED1F2BDC62D600337AA0 /* Movie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movie.json; sourceTree = "<group>"; };
 		9D2BED212BDC631E00337AA0 /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
+		9DB0BB472BDCD92B00AE2D98 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		9DB0BB492BDCD98C00AE2D98 /* ImageLoadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadService.swift; sourceTree = "<group>"; };
+		9DB0BB4C2BDCDA2C00AE2D98 /* ImageLoadProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +205,7 @@
 				9D2BECC92BD6E28200337AA0 /* Array+Extension.swift */,
 				9D2BECCB2BD6E2A000337AA0 /* UIView+Extension.swift */,
 				9D2BECD72BD6EEB100337AA0 /* UIFont+Extension.swift */,
+				9DB0BB472BDCD92B00AE2D98 /* FileManager+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +251,7 @@
 				9D2BECF02BDAEEAD00337AA0 /* ServiceProtocol.swift */,
 				9D2BED132BDC192100337AA0 /* ServiceLocator.swift */,
 				9D2BECF22BDB932A00337AA0 /* NetworkService */,
+				9DB0BB4B2BDCD99000AE2D98 /* ImageLoadService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -300,6 +308,15 @@
 				9D2BED002BDBD0AA00337AA0 /* CountryDTO.swift */,
 			);
 			path = MediaItemDTOs;
+			sourceTree = "<group>";
+		};
+		9DB0BB4B2BDCD99000AE2D98 /* ImageLoadService */ = {
+			isa = PBXGroup;
+			children = (
+				9DB0BB492BDCD98C00AE2D98 /* ImageLoadService.swift */,
+				9DB0BB4C2BDCDA2C00AE2D98 /* ImageLoadProxy.swift */,
+			);
+			path = ImageLoadService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +458,7 @@
 				9D2BECE52BDA6D9900337AA0 /* HeaderReusableView.swift in Sources */,
 				9D2BECE12BDA61FC00337AA0 /* CastMemberCell.swift in Sources */,
 				9D2BED012BDBD0AA00337AA0 /* CountryDTO.swift in Sources */,
+				9DB0BB482BDCD92B00AE2D98 /* FileManager+Extension.swift in Sources */,
 				9D2BECEC2BDA7B2400337AA0 /* MediaItemDetailView+Extension.swift in Sources */,
 				9D2BECF42BDBA7F000337AA0 /* ResponceDTO.swift in Sources */,
 				9D2BECFD2BDBD08700337AA0 /* PersonDTO.swift in Sources */,
@@ -448,6 +466,7 @@
 				9D2BED122BDC15A000337AA0 /* NetworkServiceProtocol.swift in Sources */,
 				9D2BECD82BD6EEB100337AA0 /* UIFont+Extension.swift in Sources */,
 				9D2BEC9C2BD6AA0B00337AA0 /* MediaListView.swift in Sources */,
+				9DB0BB4A2BDCD98C00AE2D98 /* ImageLoadService.swift in Sources */,
 				9D2BECCC2BD6E2A000337AA0 /* UIView+Extension.swift in Sources */,
 				9D2BED052BDBD11D00337AA0 /* MediaItem.swift in Sources */,
 				9D2BECF12BDAEEAD00337AA0 /* ServiceProtocol.swift in Sources */,
@@ -459,6 +478,7 @@
 				9D2BED182BDC464600337AA0 /* ViewState.swift in Sources */,
 				9D2BECCA2BD6E28200337AA0 /* Array+Extension.swift in Sources */,
 				9D2BECC72BD6E25400337AA0 /* NSLayoutConstraint+Extension.swift in Sources */,
+				9DB0BB4D2BDCDA2C00AE2D98 /* ImageLoadProxy.swift in Sources */,
 				9D2BECC02BD6C01600337AA0 /* ModuleBuilder.swift in Sources */,
 				9D2BECFB2BDBB4F300337AA0 /* MediaItemDTO.swift in Sources */,
 				9D2BED0E2BDC126300337AA0 /* URLRequestBuilding.swift in Sources */,
@@ -617,6 +637,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KV44Y72Q9R;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CinemaStar/Info.plist;
@@ -644,6 +665,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KV44Y72Q9R;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CinemaStar/Info.plist;

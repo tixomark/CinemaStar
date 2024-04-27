@@ -22,7 +22,7 @@ struct DocDTO: Decodable {
     }
 
     enum PosterCodingKeys: String, CodingKey {
-        case url
+        case previewUrl
     }
 
     enum RatingCodingKeys: String, CodingKey {
@@ -35,7 +35,7 @@ struct DocDTO: Decodable {
         name = try container.decodeIfPresent(String.self, forKey: .name)
 
         let posterContainer = try container.nestedContainer(keyedBy: PosterCodingKeys.self, forKey: .posterURL)
-        posterURL = try posterContainer.decodeIfPresent(String.self, forKey: .url)
+        posterURL = try posterContainer.decodeIfPresent(String.self, forKey: .previewUrl)
 
         let ratingContainer = try container.nestedContainer(keyedBy: RatingCodingKeys.self, forKey: .rating)
         rating = try ratingContainer.decodeIfPresent(Float.self, forKey: .kp)
