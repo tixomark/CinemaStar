@@ -1,0 +1,19 @@
+# file options
+
+--exclude Tests/XCTestManifests.swift,Tests/BadConfig,Snapshots,Build,PluginTests, xcuserdata/, *.xcscmblueprint, *.xccheckout, build/, DerivedData/, *.moved-aside, *.pbxuser, !default.pbxuser, *.mode1v3, !default.mode1v3, *.mode2v3, !default.mode2v3, *.perspectivev3, !default.perspectivev3, *.hmap, *.ipa, *.dSYM.zip, *.dSYM, timeline.xctimeline, playground.xcworkspace, .build/, Carthage/Build/, Dependencies/, .accio/
+
+# Отключаем следующие правила:
+--disable void, trailingCommas, unusedArguments, enumNamespaces
+--maxwidth 120
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+--indent 4
+
+# Генерируем хедер
+--header "{file}\nCopyright © RoadMap. All rights reserved."
+
+# Отключаем отступ
+--ifdef no-indent
+
+--swiftversion 5.3

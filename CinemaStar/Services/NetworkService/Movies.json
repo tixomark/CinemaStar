@@ -1,0 +1,793 @@
+{
+    "docs": [
+        {
+            "internalNames": [
+                "Земля"
+            ],
+            "name": "Земля",
+            "alternativeName": "",
+            "enName": "",
+            "year": 2021,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Россия"
+                }
+            ],
+            "releaseYears": [
+                {
+                    "start": 2021,
+                    "end": 2021
+                }
+            ],
+            "id": 4707110,
+            "externalId": {
+                "kpHD": "4e81aba1049d00d48f5b04550cf02284"
+            },
+            "names": [
+                {
+                    "name": "Земля",
+                    "language": "RU",
+                    "type": "Russian title on kinopoisk"
+                }
+            ],
+            "type": "tv-series",
+            "description": "Рассказ о формировании Российской Империи, СССР, а затем и современной России. Проект освещает ключевые этапы развития страны, прирост и потерю земель, исторические события, повлиявшие на территориально-политическую структуру России, а также сам территориальный и национальный принцип устройства нашего государства в разное время.",
+            "shortDescription": "От зарождения империи до России наших дней. Исторический сериал о ключевых событиях в истории страны",
+            "logo": null,
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/6201401/7c3a19ac-e910-47bd-8c20-09e14a5cb50d/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/6201401/7c3a19ac-e910-47bd-8c20-09e14a5cb50d/x1000"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/kinopoisk-ott-images/2419418/2a0000018564d5a7d0e7e77477dba9782982/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/2419418/2a0000018564d5a7d0e7e77477dba9782982/x1000"
+            },
+            "rating": {
+                "kp": 8.311,
+                "imdb": 0,
+                "filmCritics": 0,
+                "russianFilmCritics": 0
+            },
+            "votes": {
+                "kp": 37198,
+                "imdb": 0,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "movieLength": 0,
+            "internalRating": 8.311,
+            "internalVotes": 37198,
+            "isSeries": true,
+            "ticketsOnSale": false,
+            "totalSeriesLength": 204,
+            "seriesLength": 51,
+            "ratingMpaa": null,
+            "ageRating": 12,
+            "top10": null,
+            "top250": 120,
+            "typeNumber": 2,
+            "status": "completed"
+        },
+        {
+            "internalNames": [
+                "Орда"
+            ],
+            "name": "Орда",
+            "alternativeName": "",
+            "enName": "",
+            "year": 2011,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Россия"
+                }
+            ],
+            "releaseYears": [],
+            "id": 533055,
+            "externalId": {
+                "kpHD": "421d4b3ec0adeb6288c87b79916008ba"
+            },
+            "names": [
+                {
+                    "name": "Орда"
+                }
+            ],
+            "type": "movie",
+            "description": "Орда. Веками это слово означало кровавые набеги и унизительную дань для многих стран и народов. Странный и страшный мир со своими законами и обычаями. В середине XIV века власть Орды простирается над большей частью Евразии. Платит дань восточному соседу и Московское княжество. Когда ханшу Тайдулу сражает тяжелый недуг, ни один целитель оказывается не в силах ей помочь. Тогда в Орду вызывают «московского колдуна» митрополита Алексия. На карту поставлена судьба всего княжества. Однако и сам Алексий не знает, чем обернется его путешествие в Орду.",
+            "shortDescription": "Митрополит Алексий отправляется в Орду ради спасения Отечества. Историческая драма с Максимом Сухановым",
+            "logo": {
+                "url": "https://avatars.mds.yandex.net/get-ott/1534341/2a0000017eddd96020b937c34f60cdaa6c12/orig"
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/6201401/4fd23dfb-f558-4399-b5e8-15887dcca93d/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/6201401/4fd23dfb-f558-4399-b5e8-15887dcca93d/x1000"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/kinopoisk-ott-images/1534341/2a0000017eddda45a2c733b0167de523e481/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/1534341/2a0000017eddda45a2c733b0167de523e481/x1000"
+            },
+            "rating": {
+                "kp": 6.094,
+                "imdb": 6.2,
+                "filmCritics": 0,
+                "russianFilmCritics": 93.3333,
+                "await": null
+            },
+            "votes": {
+                "kp": 23376,
+                "imdb": 1103,
+                "filmCritics": 0,
+                "russianFilmCritics": 30,
+                "await": 2124
+            },
+            "movieLength": 129,
+            "internalRating": 6.094,
+            "internalVotes": 23376,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": 18,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null
+        },
+        {
+            "internalNames": [
+                "София",
+                "Sofiya",
+                "Sofíya"
+            ],
+            "name": "София",
+            "alternativeName": "",
+            "enName": "",
+            "year": 2016,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Россия"
+                }
+            ],
+            "releaseYears": [
+                {
+                    "start": 2016,
+                    "end": 2016
+                }
+            ],
+            "id": 977734,
+            "externalId": {
+                "imdb": "tt6653336",
+                "tmdb": 68982,
+                "kpHD": "4c4e6b310a40ff34bffb2ba907d96d9c"
+            },
+            "names": [
+                {
+                    "name": "София"
+                },
+                {
+                    "name": "Sofiya",
+                    "language": "RU",
+                    "type": "Transliteration"
+                },
+                {
+                    "name": "Sofíya",
+                    "language": "RU",
+                    "type": "Transliteration"
+                }
+            ],
+            "type": "tv-series",
+            "description": "История средневековой Руси глазами Софии Палеолог, последней наследницы византийского престола, жены московского князя Ивана III и бабушки Ивана Грозного.",
+            "shortDescription": "Иван III женится на византийской принцессе. Исторический сериал с Евгением Цыганов в роли великого князя",
+            "logo": {
+                "url": "https://avatars.mds.yandex.net/get-ott/239697/2a00000173c321e983d06b7512c7cec38cf7/orig"
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1600647/01249fa6-6cbd-4843-8b79-c98821884ba6/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1600647/01249fa6-6cbd-4843-8b79-c98821884ba6/x1000"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/tmdb-images/original/ylsKdx6ZJ1kgyVZlJoUszJD1J7o.jpg",
+                "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/ylsKdx6ZJ1kgyVZlJoUszJD1J7o.jpg"
+            },
+            "rating": {
+                "kp": 7.368,
+                "imdb": 7.6,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "votes": {
+                "kp": 22846,
+                "imdb": 529,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 341
+            },
+            "movieLength": 0,
+            "internalRating": 7.368,
+            "internalVotes": 22846,
+            "isSeries": true,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": 52,
+            "ratingMpaa": null,
+            "ageRating": 18,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 2,
+            "status": "completed"
+        },
+        {
+            "internalNames": [
+                "Следы на воде"
+            ],
+            "name": "Следы на воде",
+            "alternativeName": "",
+            "enName": "",
+            "year": 2016,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Беларусь"
+                }
+            ],
+            "releaseYears": [],
+            "id": 1009605,
+            "externalId": {
+                "kpHD": "a79b83e8cc73492c9ada0265dbfd6232"
+            },
+            "names": [
+                {
+                    "name": "Следы на воде",
+                    "language": "RU",
+                    "type": "Russian title on kinopoisk"
+                }
+            ],
+            "type": "movie",
+            "description": "Художественная реконструкция реальных событий, рассказывающих о борьбе белорусской милиции с бандитизмом в первые послевоенные годы.\n\n1946 год. Фронтовик-разведчик, старший лейтенант Смолич прибывает в городок Поречье на усиление местной милиции: в западных районах Беларуси банды терроризируют население. Особенно лютуют бандиты таинственного Фрейшюца, бывшего пособника фашистов. Смолич и начальник уголовного розыска Крикунов должны обезвредить неуловимого врага. Однако план милицейской операции внезапно оказывается под угрозой из–за утечки информации. Выясняется, что в отделении милиции есть предатель...",
+            "shortDescription": "Милиция должна ликвидировать банду фашистских приспешников. Реальная история спецоперации в Беларуси 1946-го",
+            "logo": null,
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/4774061/85b158b8-883f-492d-8e98-fc924ad0d768/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4774061/85b158b8-883f-492d-8e98-fc924ad0d768/x1000"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/kinopoisk-ott-images/224348/2a00000184cd538d8dae49b9dc112792a48e/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/224348/2a00000184cd538d8dae49b9dc112792a48e/x1000"
+            },
+            "rating": {
+                "kp": 6.305,
+                "imdb": 0,
+                "filmCritics": 0,
+                "russianFilmCritics": 0
+            },
+            "votes": {
+                "kp": 18645,
+                "imdb": 0,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 5
+            },
+            "movieLength": 100,
+            "internalRating": 6.305,
+            "internalVotes": 18645,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": 18,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null
+        },
+        {
+            "internalNames": [
+                "Королевы",
+                "Queens"
+            ],
+            "name": "Королевы",
+            "alternativeName": "Queens",
+            "enName": "",
+            "year": 2016,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Испания"
+                },
+                {
+                    "name": "Великобритания"
+                }
+            ],
+            "releaseYears": [
+                {
+                    "start": 2016,
+                    "end": 2016
+                }
+            ],
+            "id": 5130707,
+            "externalId": {
+                "kpHD": "4569dab0209d4caaa6b1cacfa4a8a0f7"
+            },
+            "names": [
+                {
+                    "name": "Королевы",
+                    "language": "RU",
+                    "type": "Russian title on kinopoisk"
+                },
+                {
+                    "name": "Queens",
+                    "language": null,
+                    "type": "Original title on kinopoisk"
+                }
+            ],
+            "type": "tv-series",
+            "description": "История знаменитого противостояния королевы Шотландии Марии I Стюарт и королевы Англии Елизаветы I. Молодая Мария, начавшая правление в 19 лет, заявляет о своих правах на английский престол, но роковая борьба с Елизаветой будет стоить ей всего.",
+            "shortDescription": "В эпоху патриархата две женщины борются за трон Англии. Зрелищный сериал о политических махинациях и любви",
+            "logo": null,
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/6201401/4c2c5ba6-5ee5-4b3c-b366-daef88439869/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/6201401/4c2c5ba6-5ee5-4b3c-b366-daef88439869/x1000"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/kinopoisk-ott-images/224348/2a00000186732a933848985182748c068990/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/224348/2a00000186732a933848985182748c068990/x1000"
+            },
+            "rating": {
+                "kp": 7.251,
+                "imdb": 5.6,
+                "filmCritics": 0,
+                "russianFilmCritics": 0
+            },
+            "votes": {
+                "kp": 8153,
+                "imdb": 164,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "movieLength": 0,
+            "internalRating": 7.251,
+            "internalVotes": 8153,
+            "isSeries": true,
+            "ticketsOnSale": false,
+            "totalSeriesLength": 60,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": 18,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 2,
+            "status": "completed"
+        },
+        {
+            "internalNames": [
+                "Демон революции",
+                "Меморандум Парвуса"
+            ],
+            "name": "Демон революции",
+            "alternativeName": "",
+            "enName": "",
+            "year": 2017,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Россия"
+                }
+            ],
+            "releaseYears": [
+                {
+                    "start": 2017,
+                    "end": 2017
+                }
+            ],
+            "id": 1043872,
+            "externalId": {
+                "imdb": "tt7598872",
+                "tmdb": 81958,
+                "kpHD": "49181474d804cda98fe6af28a98a77b7"
+            },
+            "names": [
+                {
+                    "name": "Демон революции"
+                },
+                {
+                    "name": "Меморандум Парвуса",
+                    "language": "RU",
+                    "type": "Director's Cut"
+                }
+            ],
+            "type": "tv-series",
+            "description": "1915 год. Европа охвачена огнем Первой мировой войны. В это время теоретик революции, политический эмигрант и авантюрист Александр Парвус проводит переговоры с министром иностранных дел Германии, Готлибом фон Яговом. Переговоры заканчиваются неожиданным успехом. Немецкое правительство выделяет лично Парвусу «немалые деньги», которые должны пойти на революцию в России. С этого начинается история, которая расскажет не только о жизни этого незаурядного человека и его роли в исторических событиях, завершившихся в октябре 1917 года.\n\nСтоль же значимыми героями фильма станут Владимир Ильич Ленин, успевший благодаря усилиям Парвуса вовремя вернуться в Россию, чтобы возглавить революцию, а также агент императорской контрразведки Алексей Мезенцев, рискующий жизнью ради того, чтобы предотвратить неизбежный конец одной эпохи и начало новой.",
+            "shortDescription": "",
+            "logo": {
+                "url": null
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1946459/94465c4e-ff81-4119-82b0-d32159ccef76/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1946459/94465c4e-ff81-4119-82b0-d32159ccef76/x1000"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/tmdb-images/original/fNXBcwSIME1lquYor3pf867cqKb.jpg",
+                "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/fNXBcwSIME1lquYor3pf867cqKb.jpg"
+            },
+            "rating": {
+                "kp": 6.174,
+                "imdb": 5.3,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "votes": {
+                "kp": 4758,
+                "imdb": 181,
+                "filmCritics": 0,
+                "russianFilmCritics": 1,
+                "await": 439
+            },
+            "movieLength": 0,
+            "internalRating": 6.174,
+            "internalVotes": 4758,
+            "isSeries": true,
+            "ticketsOnSale": false,
+            "totalSeriesLength": 270,
+            "seriesLength": 90,
+            "ratingMpaa": null,
+            "ageRating": 12,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 2,
+            "status": "completed"
+        },
+        {
+            "internalNames": [
+                "Боудика — королева воинов",
+                "Boudica: Rise of the Warrior Queen"
+            ],
+            "name": "Боудика — королева воинов",
+            "alternativeName": "Boudica: Rise of the Warrior Queen",
+            "enName": "",
+            "year": 2019,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Великобритания"
+                }
+            ],
+            "releaseYears": [],
+            "id": 1148073,
+            "externalId": {
+                "kpHD": "4ef9b5f7850c08acba41e63534a5f1b6"
+            },
+            "names": [
+                {
+                    "name": "Боудика — королева воинов",
+                    "language": "RU",
+                    "type": "Russian title on kinopoisk"
+                },
+                {
+                    "name": "Boudica: Rise of the Warrior Queen",
+                    "language": null,
+                    "type": "Original title on kinopoisk"
+                }
+            ],
+            "type": "movie",
+            "description": "Вождь кельтского клана хочет отдать свою шестнадцатилетнюю дочь Боудику в брак по расчету. Но ее мать делает все возможное, чтобы защитить ее. Она убеждает Боудику бежать из деревни и укрыться в доме, где прошло ее детство. Боудика понимает, что прошлое однажды настигнет ее, и к этому времени она должна превратиться из простой девушки в королеву-воительницу, чтобы защитить всех, кого любит.",
+            "shortDescription": "От деспотичного вождя кельтов сбегают жена и дочь. Историческая фантазия о безумствах материнской любви",
+            "logo": null,
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/6201401/60b05840-a31a-4c17-9bd9-4c4bcae1d2d0/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/6201401/60b05840-a31a-4c17-9bd9-4c4bcae1d2d0/x1000"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/kinopoisk-ott-images/1534341/2a000001763e0b26efb5a11e9300429b4df6/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/1534341/2a000001763e0b26efb5a11e9300429b4df6/x1000"
+            },
+            "rating": {
+                "kp": 4.976,
+                "imdb": 3.1,
+                "filmCritics": 0,
+                "russianFilmCritics": 0
+            },
+            "votes": {
+                "kp": 4477,
+                "imdb": 315,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "movieLength": 82,
+            "internalRating": 4.976,
+            "internalVotes": 4477,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": 18,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null
+        },
+        {
+            "internalNames": [
+                "Хюррем Султан",
+                "Hürrem Sultan"
+            ],
+            "name": "Хюррем Султан",
+            "alternativeName": "Hürrem Sultan",
+            "enName": "",
+            "year": 2003,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Турция"
+                }
+            ],
+            "releaseYears": [
+                {
+                    "start": 2003,
+                    "end": 2003
+                }
+            ],
+            "id": 623705,
+            "externalId": {
+                "kpHD": null,
+                "imdb": "tt0424656",
+                "tmdb": 49515
+            },
+            "names": [
+                {
+                    "name": "Хюррем Султан"
+                },
+                {
+                    "name": "Hürrem Sultan"
+                }
+            ],
+            "type": "tv-series",
+            "description": "В основу многосерийного фильма «Хюррем Султан» легли подлинные события, произошедшие с уроженкой Украины Александрой Лисовской, более известной, как Роксолана. Александра попала в плен к крымским татарам, во время их нападения на Дикое Поле. Девушка очутилась в Стамбуле при дворе турецкого Султана Сулеймана. Визир Ибрагим - паша подарил ее султану. Судьба распорядилась жизнью этой девушки и кажется, будто ей остается только подчиниться и перестать роптать, жить при дворе и выполнять прихоти своего хозяина, как и полагает молодой наложнице. Александре пришлось принять другую веру, но даже после этого она не пожелала мириться со своим положением рабы...",
+            "shortDescription": "",
+            "logo": {
+                "url": null,
+                "previewUrl": null
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1599028/901eb3bb-09c7-4362-a70b-9beb2162f84a/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1599028/901eb3bb-09c7-4362-a70b-9beb2162f84a/x1000"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/tmdb-images/original/zpV7Z3BZWU00u2zGqsaE0jDiQSj.jpg",
+                "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/zpV7Z3BZWU00u2zGqsaE0jDiQSj.jpg"
+            },
+            "rating": {
+                "kp": 6.628,
+                "imdb": 3.4,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "votes": {
+                "kp": 4355,
+                "imdb": 302,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "movieLength": 0,
+            "internalRating": 6.628,
+            "internalVotes": 4355,
+            "isSeries": true,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": null,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 2,
+            "status": "completed"
+        },
+        {
+            "internalNames": [
+                "1066",
+                "1066"
+            ],
+            "name": "1066",
+            "alternativeName": "1066",
+            "enName": "",
+            "year": 2023,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Великобритания"
+                }
+            ],
+            "releaseYears": [],
+            "id": 415096,
+            "externalId": {
+                "kpHD": null,
+                "imdb": "tt14806926",
+                "tmdb": 1149622
+            },
+            "names": [
+                {
+                    "name": "1066"
+                },
+                {
+                    "name": "1066"
+                }
+            ],
+            "type": "movie",
+            "description": "",
+            "shortDescription": "",
+            "logo": {
+                "url": null,
+                "previewUrl": null
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1599028/0121d382-462a-453f-b970-d01dd81baca0/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1599028/0121d382-462a-453f-b970-d01dd81baca0/x1000"
+            },
+            "backdrop": {
+                "url": null,
+                "previewUrl": null
+            },
+            "rating": {
+                "kp": 0,
+                "imdb": 7.5,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 88.43
+            },
+            "votes": {
+                "kp": 3891,
+                "imdb": 47,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 714
+            },
+            "movieLength": 180,
+            "internalRating": 7.5,
+            "internalVotes": 3891,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": null,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null
+        },
+        {
+            "internalNames": [
+                "Белая рабыня",
+                "La Esclava Blanca"
+            ],
+            "name": "Белая рабыня",
+            "alternativeName": "La Esclava Blanca",
+            "enName": "",
+            "year": 2016,
+            "genres": [
+                {
+                    "name": "история"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Колумбия"
+                }
+            ],
+            "releaseYears": [
+                {
+                    "start": 2016,
+                    "end": 2016
+                }
+            ],
+            "id": 966939,
+            "externalId": {
+                "kpHD": "4283e8aaa4a09fc1bafc69ac1a84d82c",
+                "imdb": "tt5458128",
+                "tmdb": 73640
+            },
+            "names": [
+                {
+                    "name": "Белая рабыня"
+                },
+                {
+                    "name": "La Esclava Blanca"
+                }
+            ],
+            "type": "tv-series",
+            "description": "Главная героиня этого сериала молода, поэтому подумывает о замужестве. Она приехала из Испании, чтобы найти своего единственного и неповторимого мужчину. Однако на самом деле Виктория прибыла в чужие края, чтобы восстановить справедливость на местных землях. Она считает, что сможет освободить тысячи людей от рабской зависимости, ведь многочисленные темнокожие рабы до сих пор остаются под гнетом своих господ. Некогда одна из таких семей спасла в младенческом возрасте ей жизнь, поэтому Виктория готова отплатить тем же. Она выросла здесь, но после отправилась жить в Европу, ведь белая девушка не могла жить в одной семье с темнокожими рабами. Теперь героиня вернулась обратно туда, где когда-то ее жизнь обрела новый смысл. Она готова начать борьбу за свободу других людей, приравняв всех перед законом и Богом.",
+            "shortDescription": "Семья рабов берет на воспитание осиротевшую дочь плантаторов. Костюмная драма о борьбе за свободу из Колумбии",
+            "logo": {
+                "url": "https://image.openmoviedb.com/tmdb-images/original/rQnOKkdm7PMoBWQNQ12r2Vrb6r4.png",
+                "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/rQnOKkdm7PMoBWQNQ12r2Vrb6r4.png"
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1946459/5aed0cf3-464c-4d03-9c0f-5d99bef32df4/orig",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1946459/5aed0cf3-464c-4d03-9c0f-5d99bef32df4/x1000"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/tmdb-images/original/3IpBBS4QSCMlna10HgCCESx1NgT.jpg",
+                "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/3IpBBS4QSCMlna10HgCCESx1NgT.jpg"
+            },
+            "rating": {
+                "kp": 6.094,
+                "imdb": 8,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "votes": {
+                "kp": 3400,
+                "imdb": 646,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "movieLength": 0,
+            "internalRating": 6.094,
+            "internalVotes": 3400,
+            "isSeries": true,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": 60,
+            "ratingMpaa": null,
+            "ageRating": 18,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 2,
+            "status": "completed"
+        }
+    ],
+    "total": 1000,
+    "limit": 10,
+    "page": 1,
+    "pages": 100
+}
+

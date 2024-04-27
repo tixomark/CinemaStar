@@ -1,0 +1,492 @@
+{
+    "fees": {
+        "world": null,
+        "russia": null
+    },
+    "id": 533055,
+    "type": "movie",
+    "externalId": {
+        "kpHD": "421d4b3ec0adeb6288c87b79916008ba"
+    },
+    "name": "Орда",
+    "rating": {
+        "kp": 6.094,
+        "imdb": 6.2,
+        "filmCritics": 0,
+        "russianFilmCritics": 93.3333,
+        "await": null
+    },
+    "description": "Орда. Веками это слово означало кровавые набеги и унизительную дань для многих стран и народов. Странный и страшный мир со своими законами и обычаями. В середине XIV века власть Орды простирается над большей частью Евразии. Платит дань восточному соседу и Московское княжество. Когда ханшу Тайдулу сражает тяжелый недуг, ни один целитель оказывается не в силах ей помочь. Тогда в Орду вызывают «московского колдуна» митрополита Алексия. На карту поставлена судьба всего княжества. Однако и сам Алексий не знает, чем обернется его путешествие в Орду.",
+    "votes": {
+        "kp": 23376,
+        "imdb": 1103,
+        "filmCritics": 0,
+        "russianFilmCritics": 30,
+        "await": 2124
+    },
+    "distributors": {
+        "distributor": "Вольга",
+        "distributorRelease": "Вольга"
+    },
+    "premiere": {
+        "world": "2012-09-20T00:00:00.000Z",
+        "russia": "2012-09-20T00:00:00.000Z",
+        "bluray": "2012-10-18T00:00:00.000Z",
+        "dvd": "2012-10-18T00:00:00.000Z"
+    },
+    "slogan": null,
+    "year": 2011,
+    "budget": {
+        "value": 12000000,
+        "currency": "$"
+    },
+    "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/6201401/4fd23dfb-f558-4399-b5e8-15887dcca93d/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/6201401/4fd23dfb-f558-4399-b5e8-15887dcca93d/x1000"
+    },
+    "facts": [
+        {
+            "value": "Исполнителя одной из главных ролей, якутского актёра <a href=\"/name/1922081/\" class=\"all\">Федота Львова</a>, укусил каракурт, и Федот два дня провел в больнице.",
+            "type": "FACT",
+            "spoiler": false
+        },
+        {
+            "value": "Съёмки проходили с середины июня до начала декабря 2010 года с перерывами.",
+            "type": "FACT",
+            "spoiler": false
+        },
+        {
+            "value": "Для фильма было сшито более тысячи костюмов, построены натурные декорации Москвы XIV века и столицы Золотой Орды — Сарай-Бату.",
+            "type": "FACT",
+            "spoiler": false
+        },
+        {
+            "value": "Создатели фильма консультировались с учеными-историками, изучали музейные экспозиции, живопись того времени, историю костюма, планы археологических раскопок.",
+            "type": "FACT",
+            "spoiler": false
+        },
+        {
+            "value": "Съёмки Орды проходили в Астраханской области, близ села Селитренное, в местах, где в действительности находился город Сарай-Бату.",
+            "type": "FACT",
+            "spoiler": false
+        },
+        {
+            "value": "В массовых сценах фильма участвовали около трёхсот жителей (в основном восточной внешности) из близлежащих сёл Харабалинского района (где половину населения составляют казахи) и более ста местных наездников.",
+            "type": "FACT",
+            "spoiler": false
+        },
+        {
+            "value": "Во время съёмок в степях киногруппа работала в экстремальных условиях: жара порою достигала 50-ти градусов, случались и пыльные бури, которые ломали декорации и аппаратуру.",
+            "type": "FACT",
+            "spoiler": false
+        },
+        {
+            "value": "Герои фильма говорят на карачаево-балкарском языке, близком к среднекыпчакскому, на котором в XIV веке говорили в Золотой Орде. Консультации при переводе текста оказывали балкарские деятели культуры Музафар и Фатимат Таукеновы. За тем, чтобы актёры во время съёмок и озвучивания правильно произносили текст, следили переводчики.",
+            "type": "FACT",
+            "spoiler": false
+        },
+        {
+            "value": "Облачение, в котором митрополит (<a href=\"/name/251225/\" class=\"all\">Максим Суханов</a>) проводит службу, весит 20 килограммов, его украшения настоящие, кованые.",
+            "type": "FACT",
+            "spoiler": false
+        }
+    ],
+    "genres": [
+        {
+            "name": "история"
+        }
+    ],
+    "countries": [
+        {
+            "name": "Россия"
+        }
+    ],
+    "seasonsInfo": [],
+    "persons": [
+        {
+            "id": 251225,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_251225.jpg",
+            "name": "Максим Суханов",
+            "enName": null,
+            "description": "митрополит Алексий",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 2276526,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2276526.jpg",
+            "name": "Роза Хайруллина",
+            "enName": null,
+            "description": "Тайдула",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1456200,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1456200.jpg",
+            "name": "Иннокентий Дакаяров",
+            "enName": null,
+            "description": "хан Джанибек",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 224365,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_224365.jpg",
+            "name": "Александр Яценко",
+            "enName": null,
+            "description": "Федька",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 224388,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_224388.jpg",
+            "name": "Виталий Хаев",
+            "enName": null,
+            "description": "князь Иван Красный",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 2339447,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2339447.jpg",
+            "name": "Алексей Егоров",
+            "enName": null,
+            "description": "Бадакюль",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 1922081,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1922081.jpg",
+            "name": "Федот Львов",
+            "enName": null,
+            "description": "Тимер",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 224368,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_224368.jpg",
+            "name": "Андрей Панин",
+            "enName": null,
+            "description": "хан Тинибек",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 552322,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_552322.jpg",
+            "name": "Алексей Шевченков",
+            "enName": null,
+            "description": "истопник Василий",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 2900338,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2900338.jpg",
+            "name": "Моге Ооржак",
+            "enName": null,
+            "description": "Бердибек",
+            "profession": "актеры",
+            "enProfession": "actor"
+        },
+        {
+            "id": 251140,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_251140.jpg",
+            "name": "Алексей Айги",
+            "enName": null,
+            "description": null,
+            "profession": "композиторы",
+            "enProfession": "composer"
+        },
+        {
+            "id": 318268,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_318268.jpg",
+            "name": "Наталья Иванова",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2000990,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2000990.jpg",
+            "name": "Людмила Илюткина",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2990520,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2990520.jpg",
+            "name": "Максим Анферов",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2841392,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2841392.jpg",
+            "name": "Максим Козлов",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2990532,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2990532.jpg",
+            "name": "Станислав Хубецов",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2990533,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2990533.jpg",
+            "name": "Берик Баяджанов",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2841394,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2841394.jpg",
+            "name": "Марина Копытова",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2990558,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2990558.jpg",
+            "name": "Илья Косырев",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2990559,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2990559.jpg",
+            "name": "Елена Гостюшина",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2990560,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2990560.jpg",
+            "name": "Максим Панов",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2990561,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2990561.jpg",
+            "name": "Марина Преображенская",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2841393,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2841393.jpg",
+            "name": "Константин Каковкин",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 2297166,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2297166.jpg",
+            "name": "Валерий Похолок",
+            "enName": null,
+            "description": null,
+            "profession": "художники",
+            "enProfession": "designer"
+        },
+        {
+            "id": 231189,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_231189.jpg",
+            "name": "Андрей Прошкин",
+            "enName": null,
+            "description": null,
+            "profession": "режиссеры",
+            "enProfession": "director"
+        },
+        {
+            "id": 2003706,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2003706.jpg",
+            "name": "Наталья Кучеренко",
+            "enName": null,
+            "description": null,
+            "profession": "монтажеры",
+            "enProfession": "editor"
+        },
+        {
+            "id": 637495,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_637495.jpg",
+            "name": "Юрий Райский",
+            "enName": null,
+            "description": null,
+            "profession": "операторы",
+            "enProfession": "operator"
+        },
+        {
+            "id": 1712671,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1712671.jpg",
+            "name": "Сергей Кравец",
+            "enName": null,
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 1712747,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1712747.jpg",
+            "name": "Наталия Гостюшина",
+            "enName": null,
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 556727,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_556727.jpg",
+            "name": "Алексей Карпушин",
+            "enName": null,
+            "description": null,
+            "profession": "продюсеры",
+            "enProfession": "producer"
+        },
+        {
+            "id": 75152,
+            "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_75152.jpg",
+            "name": "Юрий Арабов",
+            "enName": null,
+            "description": null,
+            "profession": "редакторы",
+            "enProfession": "writer"
+        }
+    ],
+    "images": {
+        "framesCount": 40
+    },
+    "lists": [],
+    "spokenLanguages": [],
+    "productionCompanies": [],
+    "typeNumber": 1,
+    "alternativeName": null,
+    "enName": null,
+    "names": [
+        {
+            "name": "Орда"
+        }
+    ],
+    "similarMovies": [
+        {
+            "id": 84675,
+            "name": "Монгол",
+            "enName": null,
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/599afdc6-55a6-4fad-8db3-db350c3b8aaa/orig",
+                "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/599afdc6-55a6-4fad-8db3-db350c3b8aaa/x1000"
+            }
+        },
+        {
+            "id": 407285,
+            "name": "Царь",
+            "enName": null,
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/61f7b154-9117-49d2-af2e-bfc2a2e0cd89/orig",
+                "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/61f7b154-9117-49d2-af2e-bfc2a2e0cd89/x1000"
+            }
+        },
+        {
+            "id": 47270,
+            "name": "Кочевник",
+            "enName": null,
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/10893610/14e18d7b-79f0-448d-8253-48ef5a7d09c5/orig",
+                "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/10893610/14e18d7b-79f0-448d-8253-48ef5a7d09c5/x1000"
+            }
+        },
+        {
+            "id": 8385,
+            "name": "Андрей Рублев",
+            "enName": null,
+            "alternativeName": null,
+            "type": "movie",
+            "poster": {
+                "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/4483445/d72394ea-20c2-46cb-bcc6-4081b4291661/orig",
+                "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/4483445/d72394ea-20c2-46cb-bcc6-4081b4291661/x1000"
+            }
+        }
+    ],
+    "updatedAt": "2024-04-20T00:47:00.897Z",
+    "sequelsAndPrequels": [],
+    "movieLength": 129,
+    "ratingMpaa": null,
+    "shortDescription": "Митрополит Алексий отправляется в Орду ради спасения Отечества. Историческая драма с Максимом Сухановым",
+    "technology": {
+        "hasImax": false,
+        "has3D": false
+    },
+    "ticketsOnSale": false,
+    "imagesInfo": {
+        "framesCount": 40
+    },
+    "ageRating": 18,
+    "backdrop": {
+        "url": "https://image.openmoviedb.com/kinopoisk-ott-images/1534341/2a0000017eddda45a2c733b0167de523e481/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/1534341/2a0000017eddda45a2c733b0167de523e481/x1000"
+    },
+    "logo": {
+        "url": "https://avatars.mds.yandex.net/get-ott/1534341/2a0000017eddd96020b937c34f60cdaa6c12/orig"
+    },
+    "watchability": {
+        "items": [
+            {
+                "name": "PREMIER",
+                "logo": {
+                    "url": "https://avatars.mds.yandex.net/get-ott/239697/0f86e907-9531-47e9-87bd-5101a08d4e30/orig"
+                },
+                "url": "https://premier.one/show/20054?utm_source=yandex&utm_medium=yandex_feed_search&utm_campaign=yandex_feed"
+            }
+        ]
+    },
+    "top10": null,
+    "top250": null,
+    "status": null,
+    "audience": [
+        {
+            "count": 39800,
+            "country": "Украина"
+        }
+    ],
+    "deletedAt": null,
+    "isSeries": false,
+    "seriesLength": null,
+    "totalSeriesLength": null,
+    "networks": null
+}
