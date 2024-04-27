@@ -106,14 +106,6 @@ final class MediaItemDetailView: UIViewController {
         collectionViewConfigureLayout()
     }
 
-    private func bindValues() {
-        viewModel.state.bind { [weak self] _ in
-            Task.detached { @MainActor in
-                self?.collectionView.reloadData()
-            }
-        }
-    }
-
     private func collectionViewConfigureLayout() {
         [
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -121,6 +113,19 @@ final class MediaItemDetailView: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ].activate()
+    }
+
+    private func bindValues() {
+        viewModel.state.bind { [weak self] _ in
+            Task.detached { @MainActor in
+                self?.collectionView.reloadData()
+            }
+        }
+        viewModel.isWatching.bind { [weak self] isWatching in
+            if isWatching {
+                self?.showUnderDevelopmentAlert()
+            }
+        }
     }
 
     @objc private func likeButtonTapped() {}
@@ -163,6 +168,9 @@ extension MediaItemDetailView: UICollectionViewDataSource {
             else { return UICollectionViewCell() }
 
             cell.configure(with: mediaItem)
+            cell.watchButtonTappedHandler = { [weak self] in
+                self?.viewModel.watchButtonTapped()
+            }
             Task.detached(priority: .userInitiated) {
                 let (data, index) = await self.viewModel.getImage(atIndexPath: indexPath)
                 guard let data else { return }

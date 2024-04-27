@@ -38,7 +38,7 @@ extension MediaItem {
         description = dto.description ?? ""
         year = dto.year
         country = dto.country
-        type = dto.type
+        type = dto.type == "movie" ? "Фильм" : "Сериал"
         persons = dto.persons?.compactMap { Person($0) } ?? []
         language = dto.language
         similarMovies = dto.similarMovies?.compactMap { SimilarMovie($0) } ?? []

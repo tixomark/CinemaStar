@@ -18,6 +18,7 @@ final class WatchAlsoMediaItemCell: UICollectionViewCell {
     private let titleLabel = {
         let label = UILabel()
         label.font = .inter(size: 16)
+        label.numberOfLines = 0
         label.textColor = .white
         return label
     }()
@@ -61,6 +62,13 @@ final class WatchAlsoMediaItemCell: UICollectionViewCell {
         super.init(coder: coder)
         configureUI()
         configureLayout()
+    }
+
+    // MARK: - Public Methods
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        posterImage = nil
     }
 
     // MARK: - Private Methods

@@ -7,16 +7,23 @@ protocol MediaItemDetalViewModelProtocol: AnyObject {
     var mediaItemSections: [MediaItemDataSection] { get }
     /// Состояние загрузки данных по объекту
     var state: Dynamic<ViewState<MediaItem>> { get }
+    /// Состояние просмотра
+    var isWatching: Dynamic<Bool> { get }
     /// Сообщает о том что вью загрузилась
     func viewLoaded()
     /// Просит загрузить картинку для ячейки по индексу
     func getImage(atIndexPath indexPath: IndexPath) async -> (Data?, IndexPath)
+    /// Сообщает о нажатии на кноку просметра
+    func watchButtonTapped()
+    /// Сообщает о закрытии уведомления о разработке функционала
+    func underDevelopmentMessageDidClose()
 }
 
 final class MediaItemDetailViewModel {
     // MARK: - Public Properties
 
     private(set) var state = Dynamic<ViewState<MediaItem>>(.loading)
+    private(set) var isWatching = Dynamic(false)
 
     // MARK: - Private Properties
 
@@ -80,5 +87,13 @@ extension MediaItemDetailViewModel: MediaItemDetalViewModelProtocol {
         let data = await imageLoadService?.loadImage(atURL: url)
         result.data = data
         return result
+    }
+
+    func watchButtonTapped() {
+        isWatching.value = true
+    }
+
+    func underDevelopmentMessageDidClose() {
+        isWatching.value = false
     }
 }

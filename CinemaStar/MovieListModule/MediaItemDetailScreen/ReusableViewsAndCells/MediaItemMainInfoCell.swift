@@ -75,6 +75,7 @@ final class MediaItemMainInfoCell: UICollectionViewCell {
         button.backgroundColor = .userDarkGreen
         button.layer.cornerRadius = 12
         button.layer.cornerCurve = .continuous
+        button.addTarget(self, action: #selector(watchButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -88,6 +89,8 @@ final class MediaItemMainInfoCell: UICollectionViewCell {
             posterImageView.image = newImage
         }
     }
+
+    var watchButtonTappedHandler: (() -> ())?
 
     // MARK: - Initializers
 
@@ -168,5 +171,9 @@ final class MediaItemMainInfoCell: UICollectionViewCell {
             metadataLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             metadataLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ].activate()
+    }
+
+    @objc private func watchButtonTapped() {
+        watchButtonTappedHandler?()
     }
 }
